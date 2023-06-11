@@ -18,6 +18,21 @@
   </NuxtLayout>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
   $w: 1px;
+
+  html,
+  body {
+    font-size: 62.5% !important;
+    line-height: 1.5 !important;
+    vertical-align: middle !important;
+
+    p {
+      margin: 0 !important;
+    }
+  }
+
+  body {
+    margin: 0 !important;
+  }
 </style>
