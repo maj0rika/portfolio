@@ -1,5 +1,15 @@
 <script setup lang="ts">
   const route = useRoute()
+
+  watch(
+    () => route.fullPath,
+    (o, v) => {
+      if (o != v) {
+        window.scrollTo(0, 0)
+      }
+    },
+    { deep: true },
+  )
 </script>
 
 <template>
