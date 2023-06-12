@@ -1,16 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  //TODO: 모바일 대응 하기
+</script>
 
 <template>
-  <nav>
+  <aside>
     <figure>
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <!-- 앞쪽 이미지 -->
             <img src="~/assets/images/logo.png" alt="logo" />
           </div>
           <div class="flip-card-back">
-            <!-- 뒤쪽 이미지 -->
             <img src="~/assets/images/me.jpeg" alt="logo" />
           </div>
         </div>
@@ -28,13 +28,12 @@
       <li><p to="/blog">BLOG</p></li>
       <li><p to="/contact">CONTACT</p></li>
     </ul>
-  </nav>
+  </aside>
 </template>
 
 <style scoped lang="scss">
-  nav {
+  aside {
     width: 100%;
-    height: 100%;
     padding: 3rem 0;
 
     figure {
@@ -85,7 +84,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 100%;
       padding: 0;
       font-size: 1.2rem;
       list-style-type: none;
@@ -94,7 +92,6 @@
 
       li {
         display: flex;
-        //li 밑줄 제거
 
         p {
           cursor: pointer;

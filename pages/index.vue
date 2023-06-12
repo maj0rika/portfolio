@@ -1,15 +1,21 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div style="height: 1000px">
-    <button class="btn">Hello daisyUI</button>
-  </div>
-  <div class="p-4">
-    <FadeIn>
-      <h1>안녕하세요</h1>
-      <img src="@@images/icon.png" alt="" />
-    </FadeIn>
-  </div>
+  <article>
+    <!-- <img src="~/assets/images/logo.png" alt="logo" />
+    <InputWaveText class="wave-text" text="maj0rika" /> -->
+
+    <ContentsAbout />
+  </article>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  article {
+    height: 10000px;
+
+    .wave-text {
+      position: flex;
+      font-size: 10rem;
+    }
+  }
+</style>
