@@ -1,10 +1,19 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const isLocked = ref(false)
+</script>
 
 <template>
-  <div class="container">
+  <div class="container" ref="el" :style="{}">
     <div class="layout">
-      <SideNav class="side" />
-      <!-- TODO:스티키 적용해야함!!!  -->
+      <Icon
+        name="heroicons:bars-3"
+        size="36"
+        color="#252530"
+        class="mobile"
+        @click="isLocked = !isLocked"
+      />
+      <SideNav class="side" v-model:isShow="isLocked" />
+
       <main><slot /></main>
       <Footer />
     </div>
@@ -12,33 +21,43 @@
 </template>
 
 <style scoped lang="scss">
+  @import 'assets/styles/index.scss';
   .container {
-    overflow: scroll;
     display: flex;
+    flex-flow: column;
     justify-content: center;
-    width: 100%;
-
+    overflow: scroll;
+    width: calc(100% - 6rem);
+    height: calc(100% - 6rem);
+    min-height: 100vh;
+    padding: 3rem;
     background-color: #f5f5f5;
-    padding: 3rem 0;
+
+    touch-action: auto;
   }
   .layout {
-    display: grid;
-    width: 100%;
-    max-width: 102.4rem;
+    @include mobile-over {
+      position: relative;
+      display: grid;
+      width: 100%;
+      max-width: 102.4rem;
 
-    grid-template-areas:
-      'side main'
-      'side footer';
-    grid-template-columns: 30rem 1fr;
-    grid-template-rows: 1fr auto;
-    grid-gap: 1rem;
+      grid-gap: 1rem;
+      grid-template-areas:
+        'side main'
+        'side footer';
+      grid-template-columns: 30rem 1fr;
+      grid-template-rows: 1fr auto;
+    }
+    @include mobile {
+    }
   }
 
   .side {
-    position: sticky;
-    // height: 60rem;
-    background-color: blueviolet;
-    align-self: start;
-    top: 0;
+    @include mobile-over {
+      position: sticky;
+      top: 0;
+      align-self: start;
+    }
   }
 </style>

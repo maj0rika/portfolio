@@ -1,57 +1,153 @@
 <script setup lang="ts">
-  //TODO: 모바일 대응 하기
+  const props = defineProps({
+    isShow: {
+      type: Boolean,
+      default: false,
+    },
+  })
+
+  const emit = defineEmits(['update:isShow'])
+  const modelValue = useVModel(props, 'isShow', emit)
+
+  const target = ref<HTMLElement | null>(null)
+
+  onMounted(() => {
+    target.value = document.querySelector('body')
+    //target에 style 적용
+  })
+
+  watch(
+    () => modelValue.value,
+    (o, v) => {
+      if (o != v && target.value) {
+        if (v) {
+          target.value.style.overflow = 'auto'
+        } else {
+          target.value.style.overflow = 'hidden'
+        }
+      }
+    },
+    { deep: true },
+  )
 </script>
 
 <template>
-  <aside>
-    <figure>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="~/assets/images/logo.png" alt="logo" />
-          </div>
-          <div class="flip-card-back">
-            <img src="~/assets/images/me.jpeg" alt="logo" />
+  <section
+    :style="{
+      opacity: isShow ? 1 : 0,
+      pointerEvents: isShow ? 'auto' : 'none',
+    }"
+  >
+    <aside
+      :style="{
+        transform: isShow ? 'translateX(0)' : 'translateX(-100%)',
+      }"
+    >
+      <figure>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="~/assets/images/logo.png" alt="logo" />
+            </div>
+            <div class="flip-card-back">
+              <img src="~/assets/images/me.jpeg" alt="logo" />
+            </div>
           </div>
         </div>
-      </div>
-    </figure>
+      </figure>
 
-    <ul>
-      <li><p to="/">HOME</p></li>
-      <li><p to="/about">ABOUT</p></li>
-      <li><p to="/tech-skills">TECH SKILLS</p></li>
-      <li><p to="/projects">PROJECTS</p></li>
-      <li><p to="/experience">EXPERIENCE</p></li>
-      <li><p to="/career">CAREER</p></li>
-      <li><p to="/education">EDUCATION</p></li>
-      <li><p to="/blog">BLOG</p></li>
-      <li><p to="/contact">CONTACT</p></li>
-    </ul>
-  </aside>
+      <ul>
+        <li><p to="/">HOME</p></li>
+        <li><p to="/about">ABOUT</p></li>
+        <li><p to="/tech-skills">TECH SKILLS</p></li>
+        <li><p to="/projects">PROJECTS</p></li>
+        <li><p to="/experience">EXPERIENCE</p></li>
+        <li><p to="/career">CAREER</p></li>
+        <li><p to="/education">EDUCATION</p></li>
+        <li><p to="/blog">BLOG</p></li>
+        <li><p to="/contact">CONTACT</p></li>
+      </ul>
+      <Icon
+        class="mobile"
+        name="heroicons:bars-3"
+        size="36"
+        color="#252530"
+        @click="modelValue = !modelValue"
+      />
+    </aside>
+  </section>
 </template>
 
 <style scoped lang="scss">
+  @import 'assets/styles/index.scss';
+
+  section {
+    @include mobile {
+      position: fixed;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      opacity: 0;
+    }
+    @include mobile-over {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+  }
+
   aside {
+    @include mobile {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 6rem);
+      transform: translateX(-100%);
+      transition: all 0.3s ease-in-out;
+      background-color: #f5f5f5;
+    }
+    @include mobile-over {
+      transform: none !important;
+    }
     width: 100%;
     padding: 3rem 0;
 
     figure {
       display: flex;
       height: 22rem;
+      @include mobile {
+        height: 15rem;
+      }
 
       img {
-        width: 100%;
-        height: auto;
+        @include mobile {
+          height: 100%;
+          width: auto;
+        }
+        @include mobile-over {
+          height: auto;
+          width: 100%;
+        }
       }
       .flip-card {
         display: flex;
         width: 100%;
+        @include mobile {
+          height: 100%;
+        }
+        @include mobile-over {
+          height: auto;
+          width: 100%;
+        }
         perspective: 1000px;
         transition: transform 0.6s;
 
         .flip-card-inner {
           position: relative;
+          display: flex;
           width: 100%;
           height: 100%;
           transform-style: preserve-3d;
@@ -64,6 +160,8 @@
 
       .flip-card-front,
       .flip-card-back {
+        display: flex;
+        justify-content: center;
         position: absolute;
         width: 100%;
         height: 100%;
