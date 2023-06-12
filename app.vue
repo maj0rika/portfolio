@@ -19,6 +19,17 @@
 </template>
 
 <style lang="scss">
+  @import 'assets/styles/index.scss';
+
+  .mobile {
+    @include mobile {
+      display: flex !important;
+    }
+    @include mobile-over {
+      display: none !important;
+    }
+  }
+
   $w: 1px;
 
   html,
@@ -30,6 +41,8 @@
     p {
       margin: 0 !important;
     }
+
+    scroll-behavior: smooth;
   }
 
   body {
