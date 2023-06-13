@@ -39,11 +39,16 @@
 </template>
 
 <style scoped lang="scss">
+  @import 'assets/styles/index.scss';
+
   .me {
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
 
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
     img {
       width: 100%;
       height: auto;
@@ -52,6 +57,7 @@
     .me-content {
       div {
         display: flex;
+
         align-items: center;
       }
 
