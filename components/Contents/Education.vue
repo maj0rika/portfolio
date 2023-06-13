@@ -1,0 +1,12 @@
+<script setup lang="ts"></script>
+
+<template>
+  <ContentsContainer>
+    <template v-slot:title>Education</template>
+    <template v-slot:subTitle></template>
+
+    <template v-slot:body></template>
+  </ContentsContainer>
+</template>
+
+<style scoped lang="scss"></style>

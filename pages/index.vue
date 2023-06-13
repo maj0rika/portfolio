@@ -2,24 +2,24 @@
 
 <template>
   <article>
-    <!-- <img src="~/assets/images/logo.png" alt="logo" />
-    <InputWaveText class="wave-text" text="maj0rika" /> -->
-
+    <ContentsHome />
     <ContentsAbout />
-    <ContentsAbout />
-    <ContentsAbout />
-    <ContentsAbout />
-    <ContentsAbout />
+    <ContentsTechSkills />
+    <ContentsCareer />
+    <ContentsBlog />
+    <ContentsExperience />
+    <ContentsEducation />
+    <ContentsProjects />
+    <ContentsContact />
   </article>
 </template>
 
 <style scoped lang="scss">
   article {
     // height: 10000px;
-
-    .wave-text {
-      position: flex;
-      font-size: 10rem;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
   }
 </style>
