@@ -23,14 +23,14 @@ $desktop: 1024px;
 
 // tablet 이상일 때
 @mixin mobile-over {
-  @media (min-width: #{$tablet}) {
+  @media (min-width: #{$mobile}) {
     @content;
   }
 }
 
 // tablet 이하일 때
 @mixin desktop-under {
-  @media (max-width: #{$tablet - 1px}) {
+  @media (max-width: #{$desktop - 1px}) {
     @content;
   }
 }
