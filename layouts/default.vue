@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  const isLocked = ref(false)
+  const toggleSidebar = ref(false)
 </script>
 
 <template>
