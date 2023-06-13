@@ -32,6 +32,7 @@
     justify-content: center;
     align-items: center;
     width: calc(100% - 6rem);
+    overflow-y: hidden;
     height: calc(100% - 6rem); // sticky 적용하려면 height 필요
     min-height: 100vh;
     padding: 3rem;
