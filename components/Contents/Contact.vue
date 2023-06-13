@@ -11,18 +11,20 @@
           <div class="icon-box">
             <Icon class="icon" name="heroicons:at-symbol" />
           </div>
-          <p>ddd</p>
+          <p>neu666632@gamil.com</p>
         </article>
         <article>
           <div class="icon-box">
             <Icon class="icon" name="heroicons:map-pin" />
           </div>
+          <p>대한민국 서울시 관악구</p>
         </article>
 
         <article>
           <div class="icon-box">
             <Icon class="icon" name="heroicons:phone-arrow-down-left" />
           </div>
+          <p>010-2243-8353</p>
         </article>
         <!-- <article>
           <div class="icon-box">
