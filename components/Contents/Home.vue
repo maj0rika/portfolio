@@ -7,18 +7,29 @@
     </template> -->
 
     <template v-slot:body>
-      <img src="~/assets/images/logo.png" alt="logo" />
-      <InputWaveText
+      <img
         :style="{
-          fontSize: '10rem',
-          fontWeight: 'bold',
-          color: '#252530',
-          'justify-content': 'center',
+          width: '100%',
+          height: '100%',
         }"
-        text="maj0rika"
+        src="~/assets/images/logo.png"
+        alt="logo"
       />
+      <InputWaveText class="wave-text" text="maj0rika" />
     </template>
   </ContentsContainer>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  @import 'assets/styles/index.scss';
+  .wave-text {
+    font-size: 10rem;
+    font-weight: bold;
+    color: #252530;
+    justify-content: center;
+
+    @include mobile {
+      font-size: 5rem;
+    }
+  }
+</style>
