@@ -38,14 +38,15 @@
     line-height: 1.5 !important;
     vertical-align: middle !important;
 
+    width: 100vw;
     p {
-      margin: 0 !important;
+      margin: 0;
     }
 
     scroll-behavior: smooth;
   }
 
   body {
-    margin: 0 !important;
+    margin: 0;
   }
 </style>
