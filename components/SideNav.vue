@@ -84,12 +84,12 @@
   section {
     @include mobile {
       position: fixed;
-      display: flex;
-      width: 100%;
-      height: 100%;
       top: 0;
       left: 0;
       z-index: 999;
+      display: flex;
+      width: 100%;
+      height: 100%;
       opacity: 0;
     }
     @include mobile-over {
@@ -105,9 +105,9 @@
       left: 0;
       width: 100%;
       height: calc(100% - 6rem);
+      background-color: #f5f5f5;
       transform: translateX(-100%);
       transition: all 0.3s ease-in-out;
-      background-color: #f5f5f5;
     }
     @include mobile-over {
       transform: none !important;
@@ -116,32 +116,32 @@
     padding: 3rem 0;
 
     figure {
-      display: flex;
-      height: 22rem;
       @include mobile {
         height: 15rem;
       }
+      display: flex;
+      height: 22rem;
 
       img {
         @include mobile {
-          height: 100%;
           width: auto;
+          height: 100%;
         }
         @include mobile-over {
-          height: auto;
           width: 100%;
+          height: auto;
         }
       }
       .flip-card {
-        display: flex;
-        width: 100%;
         @include mobile {
           height: 100%;
         }
         @include mobile-over {
-          height: auto;
           width: 100%;
+          height: auto;
         }
+        display: flex;
+        width: 100%;
         perspective: 1000px;
         transition: transform 0.6s;
 
@@ -160,11 +160,13 @@
 
       .flip-card-front,
       .flip-card-back {
+        @include mobile {
+          height: 100%;
+        }
+        position: absolute;
         display: flex;
         justify-content: center;
-        position: absolute;
         width: 100%;
-        height: 100%;
         backface-visibility: hidden;
       }
 
@@ -192,11 +194,11 @@
         display: flex;
 
         p {
-          cursor: pointer;
           position: relative;
           display: flex;
           color: #000000b3;
           text-decoration: none;
+          cursor: pointer;
 
           &::after {
             content: '';
@@ -205,7 +207,7 @@
             left: 50%;
             width: 0;
             height: 0.1rem;
-            background-color: #862ddff2; /* 언더라인 색상을 원하는 색으로 변경하세요 */
+            background-color: #862ddff2;
             transform: translateX(-50%);
             transition: all 0.1s ease-in-out;
           }
