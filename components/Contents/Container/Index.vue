@@ -52,8 +52,9 @@
   .body {
     display: flex;
     flex-flow: column;
+    width: 100%;
     gap: 2rem;
 
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 </style>
