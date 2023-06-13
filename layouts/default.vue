@@ -3,39 +3,36 @@
 </script>
 
 <template>
-  <div class="container" ref="el" :style="{}">
-    <div class="layout">
-      <Icon
-        name="heroicons:bars-3"
-        size="36"
-        color="#252530"
-        class="mobile"
-        @click="isLocked = !isLocked"
-      />
-      <SideNav class="side" v-model:isShow="isLocked" />
+  <div class="layout">
+    <Icon
+      name="heroicons:bars-3"
+      size="36"
+      color="#252530"
+      class="mobile"
+      @click="toggleSidebar = !toggleSidebar"
+    />
+    <SideNav class="side" v-model:isShow="toggleSidebar" />
 
-      <main><slot /></main>
-      <Footer />
-    </div>
+    <main class="main">
+      <NuxtPage :page-key="route.fullPath" />
+    </main>
+    <Footer />
   </div>
 </template>
 
 <style scoped lang="scss">
   @import 'assets/styles/index.scss';
-  .container {
+
+  .layout {
+    padding: 3rem;
+    background-color: #f5f5f5;
+    width: calc(100% - 6rem);
+    height: calc(100% - 6rem); // sticky 적용하려면 height 필요
+    min-height: 100vh;
     display: flex;
     flex-flow: column;
     justify-content: center;
-    overflow: scroll;
-    width: calc(100% - 6rem);
-    height: calc(100% - 6rem);
-    min-height: 100vh;
-    padding: 3rem;
-    background-color: #f5f5f5;
-
-    touch-action: auto;
-  }
-  .layout {
+    align-items: center;
     @include mobile-over {
       position: relative;
       display: grid;
@@ -51,6 +48,11 @@
     }
     @include mobile {
     }
+  }
+
+  .main {
+    display: flex;
+    width: 100%;
   }
 
   .side {
