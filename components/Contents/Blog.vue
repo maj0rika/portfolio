@@ -3,7 +3,7 @@
 <template>
   <ContentsContainer>
     <template v-slot:title>BLOG</template>
-    <template v-slot:subTitle></template>
+    <template v-slot:subTitle>내 블로그는 이렇게 있어요</template>
 
     <template v-slot:body>
       <NuxtLink to="https://maj0rika.com/react">REACT 블로그로 이동</NuxtLink>

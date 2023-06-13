@@ -3,7 +3,7 @@
 <template>
   <ContentsContainer>
     <template v-slot:title>Contact</template>
-    <template v-slot:subTitle></template>
+    <template v-slot:subTitle>나와는 이렇게 연락해요</template>
 
     <template v-slot:body>
       <section>

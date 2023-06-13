@@ -3,7 +3,7 @@
 <template>
   <ContentsContainer>
     <template v-slot:title>프로젝트 경험</template>
-    <template v-slot:subTitle></template>
+    <template v-slot:subTitle>나는 이런 프로젝트를 해왔어요</template>
 
     <template v-slot:body>
       <div>
