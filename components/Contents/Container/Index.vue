@@ -17,9 +17,10 @@
 </template>
 
 <style scoped lang="scss">
+  @import '@/assets/styles/index.scss';
   .container {
     //TODO: 테스트 지우기
-    min-height: 100vh; //test
+    // min-height: 100vh; //test
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -37,8 +38,12 @@
     .title {
       color: #888888;
       display: flex;
-      font-size: 1.5rem;
+      font-size: 3rem;
       font-weight: 700;
+
+      @include mobile {
+        font-size: 2rem;
+      }
     }
 
     .subTitle {
@@ -46,6 +51,9 @@
       font-size: 2.5rem;
       font-weight: 700;
       color: #862ddfb8;
+      @include mobile {
+        font-size: 1.5rem;
+      }
     }
   }
 
