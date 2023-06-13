@@ -1,20 +1,3 @@
-<template>
-  <div class="wave-text">
-    <span
-      v-for="(char, index) in text"
-      :key="index"
-      :style="{
-        animationDelay: `${index * 0.3}s`,
-        animationIterationCount: repeat,
-      }"
-      class="wave-animation"
-    >
-      {{ char }}
-      <template v-if="char == ' '">&nbsp;</template>
-    </span>
-  </div>
-</template>
-
 <script setup>
   // const text = ref('Hello, World!')
 
@@ -25,10 +8,27 @@
     },
     repeat: {
       type: Number,
-      default: 3,
+      default: 2,
     },
   })
 </script>
+
+<template>
+  <div class="wave-text" v-bind="$attrs">
+    <span
+      v-for="(char, index) in text"
+      :key="index"
+      :style="{
+        animationDelay: `${index * 0.2}s`,
+        animationIterationCount: repeat,
+      }"
+      class="wave-animation"
+    >
+      {{ char }}
+      <template v-if="char == ' '">&nbsp;</template>
+    </span>
+  </div>
+</template>
 
 <style scoped lang="scss">
   @keyframes wave {
@@ -45,7 +45,7 @@
 
   .wave-text {
     display: flex;
-    width: 100%;
+
     height: fit-content;
   }
 
