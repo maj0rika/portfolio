@@ -22,38 +22,39 @@
     //TODO: 테스트 지우기
     // min-height: 100vh; //test
     display: flex;
-    width: 100%;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+
     gap: 5rem;
   }
 
   .header {
-    width: 100%;
     display: flex;
     flex-flow: column;
     align-items: flex-start;
+    width: 100%;
+
     gap: 2rem;
 
     .title {
-      color: #888888;
-      display: flex;
-      font-size: 3rem;
-      font-weight: 700;
-
       @include mobile {
         font-size: 2rem;
       }
+      display: flex;
+      color: #888;
+      font-size: 3rem;
+      font-weight: 700;
     }
 
     .subTitle {
-      display: flex;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #862ddfb8;
       @include mobile {
         font-size: 1.5rem;
       }
+      display: flex;
+      color: #862ddfb8;
+      font-size: 2.5rem;
+      font-weight: 700;
     }
   }
 
@@ -61,8 +62,8 @@
     display: flex;
     flex-flow: column;
     width: 100%;
-    gap: 2rem;
-
     font-size: 1.6rem;
+
+    gap: 2rem;
   }
 </style>

@@ -1,11 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <ContentsContainer>
-    <!-- <template v-slot:title>
-      <p>Home</p>
-    </template> -->
-
+  <ContentsContainer class="mobile">
     <template v-slot:body>
       <img
         :style="{
