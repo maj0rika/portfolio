@@ -1,4 +1,9 @@
 <script setup lang="ts">
+  const { scrollToSection } = useScrollTo()
+  import { useWindowSize } from '@vueuse/core'
+
+  const { width } = useWindowSize()
+
   const props = defineProps({
     isShow: {
       type: Boolean,
@@ -11,13 +16,31 @@
 
   const target = ref<HTMLElement | null>(null)
 
+  const menuList = [
+    // 'name',
+    'about',
+    'techSkills',
+    'projects',
+    'career',
+    'blog',
+
+    'experience',
+    'education',
+    'contact',
+  ]
+
+  const clickMenu = (name: string) => {
+    modelValue.value = false
+    scrollToSection(name)
+  }
+
   onMounted(() => {
     target.value = document.querySelector('body')
-    //target에 style 적용
   })
 
   watch(
     () => modelValue.value,
+
     (o, v) => {
       if (o != v && target.value) {
         if (v) {
@@ -28,6 +51,15 @@
       }
     },
     { deep: true },
+  )
+
+  watch(
+    () => width.value,
+    (o, v) => {
+      if (o != v) {
+        modelValue.value = false
+      }
+    },
   )
 </script>
 
@@ -40,7 +72,7 @@
   >
     <aside
       :style="{
-        transform: isShow ? 'translateX(0)' : 'translateX(-100%)',
+        transform: isShow ? 'translateX(0%)' : 'translateX(-100%)',
       }"
     >
       <figure>
@@ -57,23 +89,10 @@
       </figure>
 
       <ul>
-        <li><p to="/">HOME</p></li>
-        <li><p to="/about">ABOUT</p></li>
-        <li><p to="/tech-skills">TECH SKILLS</p></li>
-        <li><p to="/projects">PROJECTS</p></li>
-        <li><p to="/experience">EXPERIENCE</p></li>
-        <li><p to="/career">CAREER</p></li>
-        <li><p to="/education">EDUCATION</p></li>
-        <li><p to="/blog">BLOG</p></li>
-        <li><p to="/contact">CONTACT</p></li>
+        <li v-for="menu in menuList" :key="menu">
+          <p @click="clickMenu(menu)">{{ menu.toUpperCase() }}</p>
+        </li>
       </ul>
-      <Icon
-        class="mobile"
-        name="heroicons:bars-3"
-        size="36"
-        color="#252530"
-        @click="modelValue = !modelValue"
-      />
     </aside>
   </section>
 </template>
@@ -86,7 +105,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 999;
+      z-index: 10;
       display: flex;
       width: 100%;
       height: 100%;
