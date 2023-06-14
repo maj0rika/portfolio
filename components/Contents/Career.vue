@@ -51,6 +51,7 @@
   }
 
   .career-box {
+    width: 100%;
     @include mobile {
       display: flex;
       flex-direction: column;
@@ -79,7 +80,7 @@
 
     .career-info {
       display: flex;
-
+      flex-wrap: wrap;
       gap: 1rem;
       @include mobile-over {
         flex-direction: column;
