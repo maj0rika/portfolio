@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div class="container" ref="el" :style="{}">
+  <div class="container">
     <div class="layout">
       <div class="icon-box">
         <Icon
@@ -22,7 +22,7 @@
       <SideNav class="side" v-model:isShow="toggleSidebar" />
 
       <main class="main">
-        <NuxtPage :page-key="route.fullPath" />
+        <slot />
       </main>
       <Footer />
     </div>
