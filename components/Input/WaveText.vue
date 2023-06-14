@@ -1,5 +1,5 @@
 <script setup>
-  // const text = ref('Hello, World!')
+  const loading = ref(false)
 
   const props = defineProps({
     text: {
@@ -10,6 +10,10 @@
       type: Number,
       default: 2,
     },
+  })
+
+  onMounted(() => {
+    loading.value = true
   })
 </script>
 
