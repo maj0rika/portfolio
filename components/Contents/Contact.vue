@@ -13,6 +13,7 @@
           </div>
           <p>neu666632@gamil.com</p>
         </article>
+
         <article>
           <div class="icon-box">
             <Icon class="icon" name="heroicons:map-pin" />
@@ -26,17 +27,13 @@
           </div>
           <p>010-2243-8353</p>
         </article>
-        <!-- <article>
-          <div class="icon-box">
-            <Icon class="icon" name="heroicons:at-symbol" />
-          </div>
-        </article> -->
       </section>
     </template>
   </ContentsContainer>
 </template>
 
 <style scoped lang="scss">
+  @import '@/assets/styles/index.scss';
   section {
     display: flex;
     flex-flow: column;
@@ -46,11 +43,22 @@
 
     article {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 4rem;
+      height: 100%;
+
+      gap: 1rem;
+
+      @include mobile {
+        flex-flow: column;
+      }
 
       p {
+        display: flex;
         font-size: 2rem;
+        width: fit-content;
+        // white-space: nowrap;
+        flex-shrink: 1;
       }
     }
   }
@@ -59,12 +67,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 12rem;
-    height: 12rem;
+    min-width: 5.5rem;
+    min-height: 5.5rem;
+    padding: 1rem;
     background-color: #862ddfb8;
   }
   .icon {
-    width: 10rem;
-    height: 10rem;
+    display: flex;
+    width: 100%;
+    height: 100%;
   }
 </style>
