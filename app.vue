@@ -30,6 +30,18 @@
     }
   }
 
+  @font-face {
+    font-family: 'bmjua';
+    src: url(@/assets/fonts/BMJUA_ttf.ttf) format('truetype');
+  }
+  input[type='password'] {
+    font-family: 'roboto';
+  }
+
+  ::placeholder {
+    font-family: 'bmjua';
+  }
+
   $w: 1px;
 
   html,
@@ -37,6 +49,7 @@
     font-size: 62.5% !important;
     line-height: 1.5 !important;
     vertical-align: middle !important;
+    font-family: 'bmjua';
 
     width: 100vw;
     p {
