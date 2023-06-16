@@ -1,40 +1,42 @@
 <script setup lang="ts"></script>
 
 <template>
-  <ContentsContainer>
-    <template v-slot:title>경력</template>
-    <template v-slot:subTitle>나는 이런곳에서 일했어요</template>
+  <FadeIn :mode="'right'">
+    <ContentsContainer>
+      <template v-slot:title>경력</template>
+      <template v-slot:subTitle>나는 이런곳에서 일했어요</template>
 
-    <template v-slot:body>
-      <article class="career-box">
-        <div class="img-box">
-          <img src="@/assets/images/coderecipe-logo.png" alt="" />
-        </div>
-        <div class="career-info">
-          <p>
-            <strong>코드레시피</strong>
-          </p>
-          <p>2022.02 ~ 2023.04</p>
-          <p>Frontend Developer</p>
-        </div>
-      </article>
+      <template v-slot:body>
+        <article class="career-box">
+          <div class="img-box">
+            <img src="@/assets/images/coderecipe-logo.png" alt="" />
+          </div>
+          <div class="career-info">
+            <p>
+              <strong>코드레시피</strong>
+            </p>
+            <p>2022.02 ~ 2023.04</p>
+            <p>Frontend Developer</p>
+          </div>
+        </article>
 
-      <p class="other-career">그 외 경력</p>
+        <p class="other-career">그 외 경력</p>
 
-      <article class="career-box">
-        <div class="img-box">
-          <img src="@/assets/images/sera-logo.png" alt="" />
-        </div>
-        <div class="career-info">
-          <p>
-            <strong>seraSE</strong>
-          </p>
-          <p>2019.01 ~ 2022.02</p>
-          <p>H/W and F/W Developer</p>
-        </div>
-      </article>
-    </template>
-  </ContentsContainer>
+        <article class="career-box">
+          <div class="img-box">
+            <img src="@/assets/images/sera-logo.png" alt="" />
+          </div>
+          <div class="career-info">
+            <p>
+              <strong>seraSE</strong>
+            </p>
+            <p>2019.01 ~ 2022.02</p>
+            <p>H/W and F/W Developer</p>
+          </div>
+        </article>
+      </template>
+    </ContentsContainer>
+  </FadeIn>
 </template>
 
 <style scoped lang="scss">

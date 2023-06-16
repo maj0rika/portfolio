@@ -1,35 +1,37 @@
 <script setup lang="ts"></script>
 
 <template>
-  <ContentsContainer>
-    <template v-slot:title>Contact</template>
-    <template v-slot:subTitle>나와는 이렇게 연락해요</template>
+  <FadeIn :mode="'up'">
+    <ContentsContainer>
+      <template v-slot:title>Contact</template>
+      <template v-slot:subTitle>나와는 이렇게 연락해요</template>
 
-    <template v-slot:body>
-      <section>
-        <article>
-          <div class="icon-box">
-            <Icon class="icon" name="heroicons:at-symbol" />
-          </div>
-          <p>neu666632@gamil.com</p>
-        </article>
+      <template v-slot:body>
+        <section>
+          <article>
+            <div class="icon-box">
+              <Icon class="icon" name="heroicons:at-symbol" />
+            </div>
+            <p>neu666632@gamil.com</p>
+          </article>
 
-        <article>
-          <div class="icon-box">
-            <Icon class="icon" name="heroicons:map-pin" />
-          </div>
-          <p>대한민국 서울시 관악구</p>
-        </article>
+          <article>
+            <div class="icon-box">
+              <Icon class="icon" name="heroicons:map-pin" />
+            </div>
+            <p>대한민국 서울시 관악구</p>
+          </article>
 
-        <article>
-          <div class="icon-box">
-            <Icon class="icon" name="heroicons:phone-arrow-down-left" />
-          </div>
-          <p>010-2243-8353</p>
-        </article>
-      </section>
-    </template>
-  </ContentsContainer>
+          <article>
+            <div class="icon-box">
+              <Icon class="icon" name="heroicons:phone-arrow-down-left" />
+            </div>
+            <p>010-2243-8353</p>
+          </article>
+        </section>
+      </template>
+    </ContentsContainer>
+  </FadeIn>
 </template>
 
 <style scoped lang="scss">
