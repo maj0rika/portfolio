@@ -48,6 +48,7 @@
   }
 
   .wave-text {
+    z-index: 10;
     display: flex;
 
     height: fit-content;
