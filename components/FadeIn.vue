@@ -27,8 +27,8 @@
   })
 
   const fadeDirections: Record<TFadeIn['mode'], string> = {
-    left: 'translate3d(-50vw, 0, 0)',
-    right: 'translate3d(50vw, 0, 0)',
+    left: 'translate3d(-20%, 0, 0)',
+    right: 'translate3d(20%, 0, 0)',
     up: 'translate3d(0, 50%, 0)',
     down: 'translate3d(0, -50%, 0)',
   }
@@ -40,28 +40,40 @@
 </script>
 
 <template>
-  <div
-    ref="fadeElement"
-    :style="{
-      transition: 'all 1s ease-in-out',
-      transform: fadeMode,
-    }"
-    :class="{
-      'fade-in': toggleFade,
-      'fade-out': !toggleFade,
-    }"
-  >
-    <slot />
+  <div class="fade-container" ref="fadeElement">
+    <div
+      :style="{
+        transition: 'all 1s ease-in-out',
+        transform: fadeMode,
+        zIndex: 10,
+        position: 'relative',
+      }"
+      :class="{
+        'fade-in': toggleFade,
+        'fade-out': !toggleFade,
+      }"
+    >
+      <slot />
+    </div>
   </div>
 </template>
 
 <style scoped>
+  .fade-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
   .fade-in {
+    width: 100%;
+    height: 100%;
     opacity: 1;
     transform: translate3d(0, 0, 0) !important;
   }
 
   .fade-out {
+    width: 100%;
+    height: 100%;
     opacity: 0;
     /* transform: translate3d(50vw, 0, 0); */
   }
