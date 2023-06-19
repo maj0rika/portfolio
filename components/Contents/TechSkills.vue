@@ -1,5 +1,7 @@
 <script setup lang="ts">
-  const html = `<div> C, Javascript, vue, nuxt ,react, html, css, scss 등을 다룰 수
+  const html = [
+    `
+  <div> C, Javascript, vue, nuxt ,react, html, css, scss 등을 다룰 수
       있습니다. 대학 생활부터
       <strong>C언어를 이용한 프로그래밍</strong>
       을 시작하였고, 관련 텀 프로젝트를 진행했었습니다. 졸업 후, 개발 첫 경험은
@@ -7,7 +9,8 @@
       C언어를 이용한 임베디드 소프트웨어</strong> 개발이었습니다. 3년 동안 임베드디 관련
       업무에 종사하였습니다.
       </br>
-      </br>
+      </br>`,
+    `
       그 후 지인을 통해 웹 개발을 시작하게 되었고, 현재는
       웹 개발자로 활동하고 있습니다. 웹 개발을 시작하면서
       <strong>Javascript와 vue, Nodejs</strong>
@@ -17,7 +20,8 @@
       <strong>vue, nuxt, react를 이용한 프론트엔드</strong>
       개발을 할 수 있습니다.
       </br>
-      </br>
+      </br>`,
+    `
     최근엔 개인 프로젝트로
       <strong>react를 이용한 블로그와 nuxt를 이용한 포트폴리오 사이트</strong>
       를 만들었습니다. 먼저 블로그는
@@ -31,7 +35,8 @@
       를 이용하여 블로그와 포트폴리오 사이트를 하나의 도메인으로 연결하였습니다.
       또한
       <strong>GitHub를 통해 소스코드</strong>
-      를 관리하고 있습니다.</div>`
+      를 관리하고 있습니다.</div>`,
+  ]
 </script>
 
 <template>
@@ -40,7 +45,11 @@
     <template v-slot:subTitle>나는 이런걸 할줄 알아요</template>
 
     <template v-slot:body>
-      <article class="text-box" v-html="html"></article>
+      <ClientOnly>
+        <FadeIn :mode="'right'" v-for="(input, i) in html" :key="i">
+          <article class="text-box" v-html="input" />
+        </FadeIn>
+      </ClientOnly>
     </template>
   </ContentsContainer>
 </template>

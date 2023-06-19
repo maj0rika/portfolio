@@ -1,12 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <FadeIn :mode="'right'">
-    <ContentsContainer>
-      <template v-slot:title>경력</template>
-      <template v-slot:subTitle>나는 이런곳에서 일했어요</template>
+  <ContentsContainer>
+    <template v-slot:title>경력</template>
+    <template v-slot:subTitle>나는 이런곳에서 일했어요</template>
 
-      <template v-slot:body>
+    <template v-slot:body>
+      <FadeIn :mode="'right'">
         <article class="career-box">
           <div class="img-box">
             <img src="@/assets/images/coderecipe-logo.png" alt="" />
@@ -19,7 +19,8 @@
             <p>Frontend Developer</p>
           </div>
         </article>
-
+      </FadeIn>
+      <FadeIn :mode="'left'">
         <p class="other-career">그 외 경력</p>
 
         <article class="career-box">
@@ -34,9 +35,9 @@
             <p>H/W and F/W Developer</p>
           </div>
         </article>
-      </template>
-    </ContentsContainer>
-  </FadeIn>
+      </FadeIn>
+    </template>
+  </ContentsContainer>
 </template>
 
 <style scoped lang="scss">
