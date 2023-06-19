@@ -17,6 +17,7 @@
         margin: '0',
         padding: '3rem',
         maxWidth: '102.4rem',
+        // overflowX: 'hidden',
       }"
     >
       <div class="icon-box">
@@ -44,7 +45,7 @@
   @import 'assets/styles/index.scss';
 
   .container {
-    // overflow-y: hidden;
+    overflow: hidden;
     display: flex;
     flex-flow: column;
     align-items: center;
