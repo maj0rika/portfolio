@@ -105,13 +105,16 @@
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 10;
+      z-index: 100;
       display: flex;
       width: 100%;
       height: 100%;
       opacity: 0;
     }
     @include mobile-over {
+      position: sticky;
+      top: 0;
+      align-self: start;
       opacity: 1 !important;
       pointer-events: auto !important;
     }
@@ -130,8 +133,9 @@
     }
     @include mobile-over {
       transform: none !important;
+      width: 30rem;
     }
-    width: 100%;
+
     padding: 3rem 0;
 
     figure {
