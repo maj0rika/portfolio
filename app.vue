@@ -14,6 +14,7 @@
 
 <template>
   <NuxtLayout>
+    <Loading />
     <NuxtPage :page-key="route.fullPath" />
   </NuxtLayout>
 </template>
@@ -51,7 +52,16 @@
     vertical-align: middle !important;
     font-family: 'bmjua';
 
-    width: 100vw;
+    // width: 100vw;
+    // height: 100vh;
+
+    // ::-webkit-scrollbar {
+    //   display: none !important;
+    // }
+
+    // -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    // scrollbar-width: none; /* 파이어폭스 */
+
     p {
       margin: 0;
     }
