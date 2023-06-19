@@ -4,10 +4,14 @@
   <section class="container">
     <header class="header">
       <div class="title">
-        <slot name="title" />
+        <FadeIn :mode="'right'">
+          <slot name="title" />
+        </FadeIn>
       </div>
       <div class="subTitle">
-        <slot name="subTitle" />
+        <FadeIn :mode="'left'">
+          <slot name="subTitle" />
+        </FadeIn>
       </div>
     </header>
     <article class="body">
@@ -18,6 +22,7 @@
 
 <style scoped lang="scss">
   @import '@/assets/styles/index.scss';
+
   .container {
     //TODO: 테스트 지우기
     // min-height: 100vh; //test
@@ -25,7 +30,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-
+    z-index: 1;
     gap: 5rem;
   }
 
