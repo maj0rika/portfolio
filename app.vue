@@ -15,8 +15,10 @@
 <template>
   <NuxtLayout>
     <Loading />
+
     <NuxtPage :page-key="route.fullPath" />
   </NuxtLayout>
+  <Modal />
 </template>
 
 <style lang="scss">
@@ -52,24 +54,162 @@
     vertical-align: middle !important;
     font-family: 'bmjua';
 
-    // width: 100vw;
-    // height: 100vh;
+    .flex-box {
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+      height: 100%;
+      gap: 3rem;
 
-    // ::-webkit-scrollbar {
-    //   display: none !important;
-    // }
-
-    // -ms-overflow-style: none; /* 인터넷 익스플로러 */
-    // scrollbar-width: none; /* 파이어폭스 */
-
-    p {
-      margin: 0;
+      &.center {
+        @include mobile-over {
+          align-items: center;
+        }
+      }
     }
 
+    p {
+      @include mobile {
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+
+      @include mobile-over {
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+
+      margin: 0;
+    }
+    h1 {
+      @include mobile {
+        font-size: 2.4rem;
+        font-weight: 400;
+      }
+
+      @include mobile-over {
+        font-size: 3.2rem;
+        font-weight: 400;
+      }
+      margin: 0;
+    }
+    h2 {
+      @include mobile {
+        font-size: 2.4rem;
+        font-weight: 400;
+      }
+
+      @include mobile-over {
+        font-size: 3.2rem;
+        font-weight: 400;
+      }
+      margin: 0;
+    }
+    h3 {
+      @include mobile {
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
+
+      @include mobile-over {
+        font-size: 2.4rem;
+        font-weight: 400;
+      }
+      margin: 0;
+    }
+    h4 {
+      @include mobile {
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+
+      @include mobile-over {
+        font-size: 2rem;
+        font-weight: 400;
+      }
+      margin: 0;
+    }
+    h5 {
+      @include mobile {
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+
+      @include mobile-over {
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
+      margin: 0;
+    }
+    h6 {
+      @include mobile {
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+
+      @include mobile-over {
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    button {
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+    }
+    input {
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+    }
+    textarea {
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+    }
+    select {
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+    }
+    img {
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+    }
+    svg {
+      border: none;
+      outline: none;
+    }
     scroll-behavior: smooth;
   }
 
   body {
     margin: 0;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 </style>
