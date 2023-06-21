@@ -12,10 +12,9 @@
 
         alignItems: 'center',
         justifyContent: 'center',
-        // width: '100%',
+        width: '100%',
         height: '100%',
         margin: '0',
-        padding: '3rem',
         maxWidth: '102.4rem',
         // overflowX: 'hidden',
       }"
@@ -45,13 +44,14 @@
   @import 'assets/styles/index.scss';
 
   .container {
-    overflow: hidden;
     display: flex;
     flex-flow: column;
     align-items: center;
-    width: 100%;
+    // overflow: hidden;
+    width: calc(100% - 6rem);
     height: 100%;
     margin: 0;
+    padding: 3rem;
   }
 
   .layout {
@@ -61,24 +61,25 @@
     @include mobile-over {
       flex-direction: row;
     }
+    width: 100%;
+    height: 100%;
     z-index: 10;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    // overflow: hidden;
+    overflow: hidden;
 
     gap: 2rem;
   }
 
   .icon-box {
-    display: none;
-
     @include mobile {
-      z-index: 101;
-      display: flex;
       position: fixed;
       top: 1rem;
       left: 1rem;
+      z-index: 101;
+      display: flex;
     }
+    display: none;
   }
 </style>
