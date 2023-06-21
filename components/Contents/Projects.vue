@@ -1,3 +1,4 @@
+import { Base } from '../../.nuxt/components';
 <script setup lang="ts"></script>
 
 <template>
@@ -6,11 +7,20 @@
     <template v-slot:subTitle>나는 이런 프로젝트를 해왔어요</template>
 
     <template v-slot:body>
+      click!
       <FadeIn :mode="'right'">
-        <div>
-          물류 온라인 솔루션 Sass, 뉴스 플랫폼 서비스, 팬 커뮤니티 서비스 등
-          다양한 프로젝트 경험이 있습니다.
-        </div>
+        <NuxtLink to="/project/quick">
+          <div class="logo-wrapper">
+            <img src="~/assets/images/logipasta.png" alt="image" />
+          </div>
+        </NuxtLink>
+      </FadeIn>
+      <FadeIn :mode="'right'">
+        <NuxtLink to="/project/qnn24">
+          <div class="logo-wrapper">
+            <img src="~/assets/images/QNN24.png" alt="image" />
+          </div>
+        </NuxtLink>
       </FadeIn>
       <FadeIn :mode="'right'">
         <div>
@@ -22,4 +32,18 @@
   </ContentsContainer>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  .logo-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+</style>
