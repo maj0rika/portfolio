@@ -3,6 +3,8 @@
   import { useWindowSize } from '@vueuse/core'
 
   const { width } = useWindowSize()
+  const route = useRoute()
+  const router = useRouter()
 
   const props = defineProps({
     isShow: {
@@ -30,6 +32,17 @@
   ]
 
   const clickMenu = (name: string) => {
+    if (route.fullPath !== '/') {
+      router.push('/')
+
+      setTimeout(() => {
+        modelValue.value = false
+        scrollToSection(name)
+      }, 500)
+
+      return
+    }
+
     modelValue.value = false
     scrollToSection(name)
   }
