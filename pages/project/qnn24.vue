@@ -1,18 +1,41 @@
 <script setup lang="ts">
-  const modal = useModal()
+import imageUpload from '@/composables/signedUrl'
+
+const modal = useModal()
+
+const imgurl = ref('')
+
+const fileHandler = async (e: any) => {
+  imgurl.value = await imageUpload(e.target.files[0])
+  console.log('imgurl', imgurl.value)
+}
 </script>
 
 <template>
   <ProjectContainer>
-    <template v-slot:name>QNN24 리뉴얼 22.02. - 22.10.</template>
+    <template v-slot:name>QNN24</template>
     <template v-slot:introduction>
-      뉴스 플랫폼 서비스 PHP에서 Nuxt 마이그레이션 작업 및 리뉴얼 작업
+      기간 : 22.02. - 22.10.<br />
+      내용 : 뉴스 플랫폼 서비스 PHP에서 Nuxt 마이그레이션 작업 및 리뉴얼 작업<br />
+      참여비율 : 서비스페이지 프론트엔드 100%<br />
+
+
     </template>
     <template v-slot:features>
-      vue3, nuxt3, daisyUI, tailwindCss, pinia
+      <Icon name="logos:vue" class="icon" />
+      vue3
+      <Icon name="logos:nuxt-icon" class="icon" />
+      nuxt3
+      <Icon name="logos:daisyui" class="icon" />
+      daisyUI
+      <Icon name="devicon:tailwindcss" class="icon" />
+      tailwindCss
+      <Icon name="logos:pinia" class="icon" />
+      pinia
     </template>
     <template v-slot:contents>
-      <div class="flex-box" style="gap: 0px">
+
+      <div class="flex-box" style="gap: 0px; margin-top: 4rem;">
         <p>- 기존 PHP로 작업된 오래된 서비스를 Vue 기반 Nuxt로 전환</p>
         <p>
           - 재사용 가능한 컴포넌트 설계, Composition API를 통한 가독성 높은 코드
@@ -21,131 +44,125 @@
         <p>- PG연동, 본인인증, Google Adsense, AWS 경험</p>
         <p>
           - 클라이언트 니즈로부터 AWS S3 이미지 업로드 방식 lambda를 통한
-          방식에서 Signed Url 방식으로 개선, 이미지 용량 제한 3Mb 에서
+          방식에서 Signed Url 방식으로 개선<br /> &nbsp;
+          이미지 용량 제한 3Mb 에서
           제한없음으로 개선
         </p>
       </div>
       <div class="flex-box center">
         <ProjectCard :flow="'row'">
           <template v-slot:img>
-            <img
-              @click="
-                modal.open('COMMENT', {
-                  content: '/_nuxt/assets/images/logipasta/미리보기.gif',
-                })
-              "
-              src="~/assets/images/logipasta/미리보기.png"
-              alt="image"
-            />
+            <img @click="
+              modal.open('COMMENT', {
+                img: 'qnn24/s3.gif',
+              })
+              " src="~/assets/images/qnn24/s3.png" alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
-              <h2>스킨</h2>
-              <p>스킨 변경사항을 미리보기 할수있는 편의성 제공</p>
-              <p>클릭으로 해당 부분 이미지 변경이 바로 가능하도록 적용</p>
+              <h2>이미지 S3 Signed_Url 적용 </h2>
+              <p>기존 이미지 업로드 방식의 용량제한 존재</p>
+              <p>이미지 옹량을 증가시키기 위해 리서치</p>
               <p>
-                변경사항이 실시간으로 반영되어 고객이 변경된 부분을 바로
-                인식할수 있도록 제공
+                signed_url 방식을 채택하여 용량제한 이슈를 해결했습니다.<br />
+                3Mb -&gt; 제한없음
               </p>
-              <p>기존 대비 고객문의 50%이상 감소</p>
+              <p>TOAST UI에 연동하여 텍스트 편집과 이미지 업로드 용이하게 구현</p>
+              <p>관리자 페이지에도 동일 기술 적용</p>
+              <input type="file" @change="fileHandler" />
+              <a v-if="imgurl" :href="imgurl" target="_blank">
+                <InputWaveText :text="'이미지 링크!'" :style="{
+                  fontSize: '1.6rem',
+                }" />
+              </a>
             </div>
           </template>
         </ProjectCard>
         <ProjectCard :flow="'row'">
           <template v-slot:img>
-            <img
-              @click="
-                modal.open('COMMENT', {
-                  content: '/_nuxt/assets/images/logipasta/팝업.gif',
-                })
-              "
-              src="~/assets/images/logipasta/팝업.png"
-              alt="image"
-            />
+            <img @click="
+              modal.open('COMMENT', {
+                img: 'qnn24/성인인증.gif',
+              })
+              " src="~/assets/images/qnn24/성인인증.png" alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
-              <h2>커스텀 팝업기능</h2>
-              <p>관리자가 직접 공지사항 팝업을 작성 할수있는 기능</p>
-              <p>색상, 이미지, 링크, 여백등 다양한 커스텀 기능 제공</p>
-              <p>미리보기를 제공하여 공지사항 작성에 용이하게 제작</p>
-              <p>api와 toastUi editor를 활용하여 서비스페이지에 전달</p>
+              <h2>본인인증 연동</h2>
+              <p>nice 본인인증으로 성인인증 적용</p>
+              <p>웹툰, 전문가 매칭 서비스 구현과 함께 적용</p>
+
             </div>
           </template>
         </ProjectCard>
         <ProjectCard :flow="'row'">
           <template v-slot:img>
-            <img
-              @click="
-                modal.open('COMMENT', {
-                  content: '/_nuxt/assets/images/logipasta/주문UI.gif',
-                })
-              "
-              src="~/assets/images/logipasta/주문UI.png"
-              alt="image"
-            />
+            <img @click="
+              modal.open('COMMENT', {
+                img: 'qnn24/pg.gif',
+              })
+              " src="~/assets/images/qnn24/pg.png" alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
-              <h2>주문내역 UI 리뉴얼</h2>
-              <p>기존에 없던 자세히 기능 추가</p>
-              <p>토글을 통해 자세히 보기와 간단히 보기 변경</p>
-              <p>주문내역에서 거래처 등록 가능하게 기능 추가</p>
+              <h2>쇼핑몰 구현</h2>
+              <p>자사 쇼핑 및 서드파티 쇼핑몰(farmiwel) 연동</p>
+              <p>헥토파이넨셜 PG 연동</p>
+              <p>장바구니 구현 및 실시간 재고 체크</p>
             </div>
           </template>
         </ProjectCard>
         <ProjectCard :flow="'row'">
           <template v-slot:img>
-            <img
-              @click="
-                modal.open('COMMENT', {
-                  content: '/_nuxt/assets/images/logipasta/요금계산.gif',
-                })
-              "
-              src="~/assets/images/logipasta/요금계산.png"
-              alt="image"
-            />
+            <img @click="
+              modal.open('COMMENT', {
+                img: 'qnn24/pinia1.png',
+              })
+              " src="~/assets/images/qnn24/pinia1.png" alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
-              <div class="flex-box">
-                <h2>요금 테스트 기능 추가</h2>
-                <p>
-                  관리자가 설정한 요금체계로 동작하는지 확인할 수 있는 테스트
-                  페이지
-                </p>
-                <p>다양한 설정들이 설정되었는지 궁금한 니즈에서 시작</p>
-                <!-- <p>주문내역에서 거래처 등록 가능하게 기능 추가</p> -->
-              </div>
+              <h2>pinia 상태관리</h2>
+              <img src="~/assets/images/qnn24/pinia2.png" />
+              <p>유저의 사용성을 고려하여 스켈레톤 UI와 pinia를 활용</p>
+              <p>재방문시 로딩시간을 줄이기위해 데이터 pinia에서 관리</p>
+              <p>불필요한 반복적인 API 통신 감소시킴</p>
             </div>
           </template>
         </ProjectCard>
-        <div class="flex-box"><p style="font-size: 3.2rem">배운점</p></div>
+
+        <div class="flex-box">
+          <p style="font-size: 3.2rem">배운점</p>
+        </div>
       </div>
     </template>
   </ProjectContainer>
 </template>
 
 <style scoped lang="scss">
-  @import 'assets/styles/index.scss';
+@import 'assets/styles/index.scss';
 
-  .flex-box {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    height: 100%;
-    gap: 3rem;
+.flex-box {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  gap: 3rem;
 
-    &.center {
-      @include mobile-over {
-        align-items: center;
-      }
+  &.center {
+    @include mobile-over {
+      align-items: center;
     }
   }
+}
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.icon {
+  pointer-events: none;
+}
 </style>

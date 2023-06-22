@@ -1,16 +1,32 @@
+
+
 <script setup lang="ts">
-  const modal = useModal()
+const modal = useModal()
 </script>
 
 <template>
   <ProjectContainer>
-    <template v-slot:name>로지파스타 22.02. - 22.10.</template>
-    <template v-slot:introduction>물류,퀵 접수 온라인 전환 솔류션</template>
+    <template v-slot:name>로지파스타 </template>
+    <template v-slot:introduction>기간 : 22.02. - 22.10.
+      <br />내용 :물류,퀵 접수 온라인 전환 솔류션
+      <br />참여비율 : 서비스 프론트엔드 30%, 어드민 프론트엔드 30%
+    </template>
     <template v-slot:features>
-      vue2, vue3, nuxt3, veutify, tailwindCss, pinia, scss
+      <Icon name="logos:vue" class="icon" />
+      vue2, vue3
+      <Icon name="logos:nuxt-icon" class="icon" />
+      nuxt3
+      <Icon name="devicon:vuetify" class="icon" />
+      vuetify
+      <Icon name="devicon:tailwindcss" class="icon" />
+      tailwindCss
+      <Icon name="logos:pinia" class="icon" />
+      pinia
+      <Icon name="vscode-icons:file-type-scss" class="icon" />
+      scss
     </template>
     <template v-slot:contents>
-      <div class="flex-box" style="gap: 0px">
+      <div class="flex-box" style="gap: 0px; margin-top: 4rem;">
         <p>- 툴팁 및 card 형태 재사용 가능한 컴포넌트 설계 및 기능 추가</p>
         <p>- 커스텀 스킨 제작 및 기존 서비스와 연동</p>
         <p>
@@ -21,15 +37,11 @@
       <div class="flex-box center">
         <ProjectCard :flow="'row'">
           <template v-slot:img>
-            <img
-              @click="
-                modal.open('COMMENT', {
-                  content: '/_nuxt/assets/images/logipasta/미리보기.gif',
-                })
-              "
-              src="~/assets/images/logipasta/미리보기.png"
-              alt="image"
-            />
+            <img @click="
+              modal.open('COMMENT', {
+                img: 'logipasta/미리보기.gif',
+              })
+              " src="~/assets/images/logipasta/미리보기.png" alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
@@ -46,15 +58,11 @@
         </ProjectCard>
         <ProjectCard :flow="'row'">
           <template v-slot:img>
-            <img
-              @click="
-                modal.open('COMMENT', {
-                  content: '/_nuxt/assets/images/logipasta/팝업.gif',
-                })
-              "
-              src="~/assets/images/logipasta/팝업.png"
-              alt="image"
-            />
+            <img @click="
+              modal.open('COMMENT', {
+                img: 'logipasta/팝업.gif',
+              })
+              " src="~/assets/images/logipasta/팝업.png" alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
@@ -68,15 +76,11 @@
         </ProjectCard>
         <ProjectCard :flow="'row'">
           <template v-slot:img>
-            <img
-              @click="
-                modal.open('COMMENT', {
-                  content: '/_nuxt/assets/images/logipasta/주문UI.gif',
-                })
-              "
-              src="~/assets/images/logipasta/주문UI.png"
-              alt="image"
-            />
+            <img @click="
+              modal.open('COMMENT', {
+                img: 'logipasta/주문UI.gif',
+              })
+              " src="~/assets/images/logipasta/주문UI.png" alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
@@ -89,15 +93,11 @@
         </ProjectCard>
         <ProjectCard :flow="'row'">
           <template v-slot:img>
-            <img
-              @click="
-                modal.open('COMMENT', {
-                  content: '/_nuxt/assets/images/logipasta/요금계산.gif',
-                })
-              "
-              src="~/assets/images/logipasta/요금계산.png"
-              alt="image"
-            />
+            <img @click="
+              modal.open('COMMENT', {
+                img: 'logipasta/요금계산.gif',
+              })
+              " src="~/assets/images/logipasta/요금계산.png" alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
@@ -113,32 +113,38 @@
             </div>
           </template>
         </ProjectCard>
-        <div class="flex-box"><p style="font-size: 3.2rem">배운점</p></div>
+        <div class="flex-box">
+          <p style="font-size: 3.2rem">배운점</p>
+        </div>
       </div>
     </template>
   </ProjectContainer>
 </template>
 
 <style scoped lang="scss">
-  @import 'assets/styles/index.scss';
+@import 'assets/styles/index.scss';
 
-  .flex-box {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    height: 100%;
-    gap: 3rem;
+.flex-box {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  gap: 3rem;
 
-    &.center {
-      @include mobile-over {
-        align-items: center;
-      }
+  &.center {
+    @include mobile-over {
+      align-items: center;
     }
   }
+}
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.icon {
+  pointer-events: none;
+}
 </style>
