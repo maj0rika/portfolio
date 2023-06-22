@@ -51,56 +51,59 @@
 </template>
 
 <style scoped lang="scss">
-  @import 'assets/styles/index.scss';
+@import 'assets/styles/index.scss';
 
-  .me {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
+.me {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
 
-    @include mobile {
-      grid-template-columns: repeat(1, 1fr);
-      grid-column-gap: 0;
-    }
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-    .me-content {
-      div {
-        display: flex;
-
-        align-items: center;
-      }
-
-      p {
-        width: 20rem;
-        white-space: nowrap;
-        font-weight: 700;
-        padding-right: 1rem;
-      }
-      span {
-        font-size: 1.6rem;
-      }
-
-      display: flex;
-      flex-flow: column;
-      grid-column: span 2 / span 2;
-    }
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 0;
   }
 
-  article {
-    display: flex;
-    flex-flow: column;
+  img {
+    width: 100%;
+    height: auto;
+  }
 
-    h2 {
-      font-size: 2rem;
+  .me-content {
+    div {
+      display: flex;
+
+      align-items: center;
     }
 
     p {
-      font-size: 1.5rem;
-      margin-top: 1rem;
+      width: 20rem;
+      white-space: nowrap;
+      font-weight: 700;
+      padding-right: 1rem;
     }
+
+    span {
+      font-size: 1.6rem;
+    }
+
+    display: flex;
+    flex-flow: column;
+    grid-column: span 2 / span 2;
   }
+}
+
+article {
+  display: flex;
+  flex-flow: column;
+  gap: 3rem;
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+}
 </style>
