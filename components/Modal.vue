@@ -11,16 +11,19 @@
       }
     },
   )
+const img = ref()
+watchEffect(async () => {
+  if (!modal.img) return
+  img.value = (
+    await import(/* @vite-ignore */ `../assets/images/${modal.img}`)
+  ).default
+})
 </script>
 
 <template>
-  <div
-    @click.self="modal.close()"
-    class="modal-container"
-    :class="{ 'modal-open': modal.show }"
-  >
-    <div class="modal-content" v-if="modal.content">
-      <img loading="lazy" :src="modal.content" alt="image" />
+  <div @click.self="modal.close()" class="modal-container" :class="{ 'modal-open': modal.show }">
+    <div class="modal-content" v-if="img">
+      <img loading="lazy" :src="img" alt="Dynamically imported image" />
     </div>
   </div>
 </template>
