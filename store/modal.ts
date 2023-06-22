@@ -9,6 +9,7 @@ export const zModalPayload = z.object({
   title: z.string().nullish(),
   content: z.string().nullish(),
   comment: z.string().nullish(),
+  img: z.string().nullish(),
   confirmButtonText: z.string().nullish(),
   confirmButtonStyle: z.string().nullish(),
   cancelButtonText: z.string().nullish(),
@@ -30,6 +31,7 @@ export const useModal = defineStore('modal', () => {
   const title = ref('')
   const content = ref('')
   const comment = ref('')
+  const img = ref('')
 
   const confirmButtonText = ref('확인')
   const cancelButtonText = ref('취소')
@@ -42,6 +44,7 @@ export const useModal = defineStore('modal', () => {
 
     title.value = payload.title || ''
     content.value = payload.content || ''
+    img.value = payload.img || ''
     confirmButtonText.value = payload.confirmButtonText || '확인'
     cancelButtonText.value = payload.cancelButtonText || '취소'
     confirmButtonStyle.value = payload.confirmButtonStyle || ''
@@ -95,5 +98,6 @@ export const useModal = defineStore('modal', () => {
     onConfirm,
     onCancel,
     comment,
+    img,
   }
 })
