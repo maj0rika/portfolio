@@ -15,6 +15,9 @@
         <FadeIn :mode="'right'">
           <NuxtLink to="https://velog.io/@neu5563">Velog로 이동</NuxtLink>
         </FadeIn>
+        <FadeIn :mode="'right'">
+          <NuxtLink to="https://github.com/maj0rika">Github로 이동</NuxtLink>
+        </FadeIn>
       </template>
     </ContentsContainer>
   </FadeIn>
