@@ -39,9 +39,11 @@ const modal = useModal()
           <template v-slot:img>
             <img @click="
               modal.open('COMMENT', {
-                img: 'logipasta/미리보기.gif',
+                img: 'https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422153961_%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5.gif',
               })
-              " src="~/assets/images/logipasta/미리보기.png" alt="image" />
+              "
+              src="https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422133955_%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5.png"
+              alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
@@ -60,9 +62,11 @@ const modal = useModal()
           <template v-slot:img>
             <img @click="
               modal.open('COMMENT', {
-                img: 'logipasta/팝업.gif',
+                img: 'https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422173589_%E1%84%91%E1%85%A1%E1%86%B8%E1%84%8B%E1%85%A5%E1%86%B8.gif',
               })
-              " src="~/assets/images/logipasta/팝업.png" alt="image" />
+              "
+              src="https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422185981_%E1%84%91%E1%85%A1%E1%86%B8%E1%84%8B%E1%85%A5%E1%86%B8.png"
+              alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
@@ -78,9 +82,11 @@ const modal = useModal()
           <template v-slot:img>
             <img @click="
               modal.open('COMMENT', {
-                img: 'logipasta/주문UI.gif',
+                img: ' https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422203409_%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%ABUI.gif',
               })
-              " src="~/assets/images/logipasta/주문UI.png" alt="image" />
+              "
+              src="https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422216261_%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%ABUI.png"
+              alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
@@ -95,9 +101,11 @@ const modal = useModal()
           <template v-slot:img>
             <img @click="
               modal.open('COMMENT', {
-                img: 'logipasta/요금계산.gif',
+                img: 'https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422233065_%E1%84%8B%E1%85%AD%E1%84%80%E1%85%B3%E1%86%B7%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB.gif',
               })
-              " src="~/assets/images/logipasta/요금계산.png" alt="image" />
+              "
+              src="https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422247795_%E1%84%8B%E1%85%AD%E1%84%80%E1%85%B3%E1%86%B7%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB.png"
+              alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const modal = useModal()
 
-const img = ref()
+// const img = ref()
 
 watch(
   () => modal.show,
@@ -14,18 +14,18 @@ watch(
   },
 )
 
-watchEffect(async () => {
-  if (!modal.img) return
-  img.value = (
-    await import(/* @vite-ignore */ `../assets/images/${modal.img}`)
-  ).default
-})
+// watchEffect(async () => {
+//   if (!modal.img) return
+//   img.value = (
+//     await import(/* @vite-ignore */ `${modal.img}`)
+//   ).default
+// })
 </script>
 
 <template>
   <div @click.self="modal.close()" class="modal-container" :class="{ 'modal-open': modal.show }">
-    <div class="modal-content" v-if="img">
-      <img loading="lazy" :src="img" alt="Dynamically imported image" />
+    <div class="modal-content" v-if="modal.img">
+      <img loading="lazy" :src="modal.img" alt="Dynamically imported image" />
     </div>
   </div>
 </template>

@@ -54,9 +54,9 @@ const fileHandler = async (e: any) => {
           <template v-slot:img>
             <img @click="
               modal.open('COMMENT', {
-                img: 'qnn24/s3.gif',
+                img: 'https://qnn24.s3.ap-northeast-2.amazonaws.com/1687421862566_s3.gif',
               })
-              " src="~/assets/images/qnn24/s3.png" alt="image" />
+              " src="https://qnn24.s3.ap-northeast-2.amazonaws.com/1687421960398_s3.png" alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
@@ -75,6 +75,7 @@ const fileHandler = async (e: any) => {
                   fontSize: '1.6rem',
                 }" />
               </a>
+              {{ imgurl }}
             </div>
           </template>
         </ProjectCard>
@@ -82,9 +83,11 @@ const fileHandler = async (e: any) => {
           <template v-slot:img>
             <img @click="
               modal.open('COMMENT', {
-                img: 'qnn24/성인인증.gif',
+                img: 'https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422014103_%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B3%E1%86%BC.gif',
               })
-              " src="~/assets/images/qnn24/성인인증.png" alt="image" />
+              "
+              src="https://qnn24.s3.ap-northeast-2.amazonaws.com/1687421990554_%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%B3%E1%86%BC.png"
+              alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
@@ -99,9 +102,9 @@ const fileHandler = async (e: any) => {
           <template v-slot:img>
             <img @click="
               modal.open('COMMENT', {
-                img: 'qnn24/pg.gif',
+                img: 'https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422052188_pg.gif',
               })
-              " src="~/assets/images/qnn24/pg.png" alt="image" />
+              " src="https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422028793_pg.png" alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
@@ -116,14 +119,14 @@ const fileHandler = async (e: any) => {
           <template v-slot:img>
             <img @click="
               modal.open('COMMENT', {
-                img: 'qnn24/pinia1.png',
+                img: 'https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422079697_pinia1.png',
               })
-              " src="~/assets/images/qnn24/pinia1.png" alt="image" />
+              " src="https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422079697_pinia1.png" alt="image" />
           </template>
           <template v-slot:content>
             <div class="flex-box">
               <h2>pinia 상태관리</h2>
-              <img src="~/assets/images/qnn24/pinia2.png" />
+              <img src="https://qnn24.s3.ap-northeast-2.amazonaws.com/1687422107216_pinia2.png" />
               <p>유저의 사용성을 고려하여 스켈레톤 UI와 pinia를 활용</p>
               <p>재방문시 로딩시간을 줄이기위해 데이터 pinia에서 관리</p>
               <p>불필요한 반복적인 API 통신 감소시킴</p>
