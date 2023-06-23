@@ -7,7 +7,6 @@ import { Base } from '../../.nuxt/components';
     <template v-slot:subTitle>나는 이런 프로젝트를 해왔어요</template>
 
     <template v-slot:body>
-      click!
       <FadeIn :mode="'right'">
         <NuxtLink to="/project/quick">
           <div class="logo-wrapper">
@@ -33,17 +32,35 @@ import { Base } from '../../.nuxt/components';
 </template>
 
 <style scoped lang="scss">
-  .logo-wrapper {
+.logo-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+    object-fit: contain;
   }
+}
+
+.logo-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  /* Initially transparent */
+  transition: background-color 0.3s ease;
+  /* Transition effect */
+}
+
+.logo-wrapper:hover::after {
+  background-color: rgba(0, 0, 0, 0.2);
+  /* On hover, change to semi-transparent black */
+}
 </style>
