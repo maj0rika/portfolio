@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <FadeIn :mode="'up'">
+  <FadeIn :mode="'right'">
     <ContentsContainer>
       <template v-slot:title>Contact</template>
       <template v-slot:subTitle>나와는 이렇게 연락해요</template>
