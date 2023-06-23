@@ -33,8 +33,8 @@
     <ContentsProjects id="projects" />
     <ContentsCareer id="career" />
     <ContentsBlog id="blog" />
-    <ContentsExperience id="experience" />
-    <ContentsEducation id="education" />
+    <!-- <ContentsExperience id="experience" /> -->
+    <!-- <ContentsEducation id="education" /> -->
     <ContentsContact id="contact" />
   </article>
 </template>
