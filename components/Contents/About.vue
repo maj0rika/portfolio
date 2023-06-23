@@ -99,6 +99,7 @@ article {
 
   h2 {
     font-size: 2rem;
+    font-weight: 700;
   }
 
   p {
