@@ -1,35 +1,27 @@
 <script setup lang="ts">
-  const route = useRoute()
-  const toggleSidebar = ref(false)
-  const toggleProfileImage = ref(false)
+const route = useRoute()
+const toggleSidebar = ref(false)
+const toggleProfileImage = ref(false)
 </script>
 
 <template>
   <div class="container">
-    <div
-      :style="{
-        display: 'flex',
+    <div :style="{
+      display: 'flex',
 
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: '100%',
-        margin: '0',
-        maxWidth: '102.4rem',
-        // overflowX: 'hidden',
-      }"
-    >
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
+      height: '100%',
+      margin: '0',
+      maxWidth: '102.4rem',
+      // overflowX: 'hidden',
+    }">
       <div class="icon-box">
-        <Icon
-          name="heroicons:bars-3"
-          size="36"
-          color="#252530"
-          class="mobile"
-          :style="{
-            display: 'flex',
-          }"
-          @click="toggleSidebar = !toggleSidebar"
-        />
+        <Icon name="heroicons:bars-3" size="36" color="#252530" class="mobile" :style="{
+          display: 'flex',
+          cursor: 'pointer',
+        }" @click="toggleSidebar = !toggleSidebar" />
       </div>
       <SideNav class="side" v-model:isShow="toggleSidebar" />
 
@@ -41,45 +33,48 @@
 </template>
 
 <style scoped lang="scss">
-  @import 'assets/styles/index.scss';
+@import 'assets/styles/index.scss';
 
-  .container {
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  // overflow: hidden;
+  width: calc(100% - 6rem);
+  height: 100%;
+  margin: 0;
+  padding: 3rem;
+}
+
+.layout {
+  @include mobile {
+    flex-direction: column;
+  }
+
+  @include mobile-over {
+    flex-direction: row;
+  }
+
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+
+  gap: 2rem;
+}
+
+.icon-box {
+  @include mobile {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 101;
     display: flex;
-    flex-flow: column;
-    align-items: center;
-    // overflow: hidden;
-    width: calc(100% - 6rem);
-    height: 100%;
-    margin: 0;
-    padding: 3rem;
   }
 
-  .layout {
-    @include mobile {
-      flex-direction: column;
-    }
-    @include mobile-over {
-      flex-direction: row;
-    }
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    overflow: hidden;
-
-    gap: 2rem;
-  }
-
-  .icon-box {
-    @include mobile {
-      position: fixed;
-      top: 1rem;
-      left: 1rem;
-      z-index: 101;
-      display: flex;
-    }
-    display: none;
-  }
+  display: none;
+}
 </style>
