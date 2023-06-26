@@ -3,6 +3,7 @@ $mobile: 767px;
 $tablet: 1023px;
 $desktop: 1024px;
 $primary: #adc344;
+$scondary: #862ddff2;
 
 @mixin mobile {
   @media (max-width: #{$mobile - 1px}) {
