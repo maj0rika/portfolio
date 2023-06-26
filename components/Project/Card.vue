@@ -28,14 +28,17 @@ const isShow = ref(false)
     <div class="content">
 
       <div class="icon-box">
-        <Icon name="heroicons:gif" size="24" class="icon" @click="
-          $emit('modalOpen')
-          " />
+        <ClientOnly>
 
-        <Icon name="heroicons:arrow-down-20-solid" size="24" class="icon" @click="
-          isShow = !isShow" :style="{
+          <Icon name="heroicons:gif" size="24" class="icon" @click="
+            $emit('modalOpen')
+            " />
+
+          <Icon name="heroicons:arrow-down-20-solid" size="24" class="icon" @click="
+            isShow = !isShow" :style="{
     transform: `rotateX(${isShow ? 180 : 0}deg)`
   }" />
+        </ClientOnly>
       </div>
       <slot name="title" />
       <slot name="content" :isShow="isShow" />
