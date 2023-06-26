@@ -13,17 +13,17 @@ const modal = useModal()
     </template>
     <template v-slot:features>
       <Icon name="logos:vue" class="icon" />
-      vue2, vue3
+      Vue, Vue
       <Icon name="logos:nuxt-icon" class="icon" />
-      nuxt3
+      Nuxt3
       <Icon name="devicon:vuetify" class="icon" />
-      vuetify
+      Vuetify
       <Icon name="devicon:tailwindcss" class="icon" />
-      tailwindCss
+      TailwindCss
       <Icon name="logos:pinia" class="icon" />
-      pinia
+      Pinia
       <Icon name="vscode-icons:file-type-scss" class="icon" />
-      scss
+      Scss
     </template>
     <template v-slot:contents>
       <div class="flex-box" style="gap: 0px; margin-top: 4rem;">
@@ -71,7 +71,7 @@ const modal = useModal()
               'show': isShow,
               'hide': !isShow,
             }">
-              <p>- api와 toastUi editor를 활용하여 서비스페이지에 전달</p>
+              <p>- API와 ToastUi editor를 활용하여 서비스페이지에 전달</p>
               <p>- 관리자가 직접 공지사항 팝업을 작성 할수있는 기능</p>
               <p>- 색상, 이미지, 링크, 여백등 다양한 커스텀 기능 제공</p>
               <p>- 미리보기를 제공하여 공지사항 작성에 용이하게 제작</p>
