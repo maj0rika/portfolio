@@ -63,6 +63,11 @@ export const useModal = defineStore('modal', () => {
     if (onClose.value) {
       onClose.value()
     }
+
+    img.value = ''
+    title.value = ''
+    content.value = ''
+
     show.value = false
     document.body.style.overflow = ''
   }
