@@ -21,54 +21,56 @@
 </template>
 
 <style scoped lang="scss">
-  @import '@/assets/styles/index.scss';
+@import '@/assets/styles/index.scss';
 
-  .container {
-    //TODO: 테스트 지우기
-    // min-height: 100vh; //test
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    z-index: 1;
-    gap: 5rem;
-  }
+.container {
+  //TODO: 테스트 지우기
+  // min-height: 100vh; //test
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+  gap: 5rem;
+}
 
-  .header {
-    display: flex;
-    flex-flow: column;
-    align-items: flex-start;
-    width: 100%;
+.header {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  width: 100%;
 
-    gap: 2rem;
+  gap: 2rem;
 
-    .title {
-      @include mobile {
-        font-size: 2rem;
-      }
-      display: flex;
-      color: #888;
-      font-size: 3rem;
-      font-weight: 700;
+  .title {
+    @include mobile {
+      font-size: 2rem;
     }
 
-    .subTitle {
-      @include mobile {
-        font-size: 1.5rem;
-      }
-      display: flex;
-      color: #862ddfb8;
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-  }
-
-  .body {
     display: flex;
-    flex-flow: column;
-    width: 100%;
-    font-size: 1.6rem;
-
-    gap: 2rem;
+    color: #888;
+    font-size: 3rem;
+    font-weight: 700;
   }
+
+  .subTitle {
+    @include mobile {
+      font-size: 1.5rem;
+    }
+
+    display: flex;
+    color: #862ddfb8;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
+.body {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  font-size: 1.6rem;
+
+  gap: 2rem;
+}
 </style>
