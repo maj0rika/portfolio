@@ -14,13 +14,17 @@
           <img src="~/assets/images/me.jpeg" alt="logo" />
 
           <div class="me-content">
-            <div>
-              <p>Front-End Developer</p>
-              <InputWaveText style="font-size: 1.6rem" text="maj0rika" />
+            <div class="flex">
+              <p class="contents">이름</p>
+              <span class="substance">이태희</span>
             </div>
-            <div>
-              <p>총 경력</p>
-              <span>1년 2개월</span>
+            <div class="flex">
+              <p class="contents">Front-End Developer</p>
+              <InputWaveText class="substance" style="font-size: 1.6rem" text="maj0rika" />
+            </div>
+            <div class="flex">
+              <p class="contents">총 경력</p>
+              <span class="substance">1년2개월</span>
             </div>
           </div>
         </div>
@@ -45,23 +49,64 @@
             더 나은 서비스를 만들어 나갑니다.
           </p>
         </FadeIn>
+        <div style="display:flex; gap:1rem;flex-wrap: wrap;">
+
+
+          <ContentsSkillCard color="red" icon="heroicons:user-group" wording="Communication" content="
+          소통을 좋아합니다.
+          " />
+          <ContentsSkillCard color="green" icon="heroicons:device-phone-mobile" wording="UI/UX" content="
+          유저의 편의성을 추구합니다.
+          " />
+
+          <ContentsSkillCard color=" blue" icon="heroicons:cube" wording="Components" content="
+          재사용성을 추구합니다" />
+          <ContentsSkillCard color="#FFD700" icon="heroicons:code-bracket" wording="Code" content="
+            코딩을 즐깁니다." />
+        </div>
+
       </article>
     </template>
   </ContentsContainer>
 </template>
 
 <style scoped lang="scss">
-@import 'assets/styles/index.scss';
+@import "assets/styles/index.scss";
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  .contents {
+    display: flex;
+    flex: 1 1 1rem
+  }
+
+  .substance {
+    display: flex;
+
+    @include mobile {
+      justify-content: flex-end;
+
+    }
+
+    justify-content: flex-start;
+
+    flex: 1 1 1rem;
+    word-break: keep-all;
+  }
+}
 
 .me {
+  @include mobile {
+    grid-column-gap: 0;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   display: grid;
+
   grid-gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
-
-  @include mobile {
-    grid-template-columns: repeat(1, 1fr);
-    grid-column-gap: 0;
-  }
 
   img {
     width: 100%;
@@ -69,32 +114,38 @@
   }
 
   .me-content {
+    display: flex;
+    flex-flow: column;
+
+    grid-column: span 2 / span 2;
+
     div {
       display: flex;
-
       align-items: center;
     }
 
     p {
-      width: 20rem;
-      white-space: nowrap;
-      font-weight: 700;
+      // width: 20rem;
+      display: flex;
       padding-right: 1rem;
+      font-weight: 700;
+      white-space: nowrap;
     }
+
 
     span {
+      display: flex;
       font-size: 1.6rem;
     }
-
-    display: flex;
-    flex-flow: column;
-    grid-column: span 2 / span 2;
   }
 }
+
+
 
 article {
   display: flex;
   flex-flow: column;
+
   gap: 3rem;
 
   h2 {
@@ -103,8 +154,8 @@ article {
   }
 
   p {
-    font-size: 1.5rem;
     margin-top: 1rem;
+    font-size: 1.5rem;
   }
 }
 </style>
