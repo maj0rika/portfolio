@@ -1,5 +1,8 @@
-import { Base } from '../../.nuxt/components';
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const projectImages = computed(() => {
+    return ['~/assets/images/logipasta.png', '~/assets/images/QNN24.png']
+  })
+</script>
 
 <template>
   <ContentsContainer>
@@ -9,15 +12,42 @@ import { Base } from '../../.nuxt/components';
     <template v-slot:body>
       <FadeIn :mode="'right'">
         <NuxtLink to="/project/quick">
-          <div class="logo-wrapper">
-            <img src="~/assets/images/logipasta.png" alt="image" />
+          <div
+            :style="{
+              backgroundImage:
+                'url(https://qnn24.s3.ap-northeast-2.amazonaws.com/1687704726117_logipasta.png)',
+              minHeight: '20rem',
+            }"
+            class="flex w-full h-full back-img wrapper"
+          >
+            <div class="content">
+              <h2>물류 온라인 전환 솔류션</h2>
+              <p></p>
+            </div>
           </div>
         </NuxtLink>
       </FadeIn>
       <FadeIn :mode="'right'">
         <NuxtLink to="/project/qnn24">
+          <div
+            :style="{
+              backgroundImage:
+                'url(https://qnn24.s3.ap-northeast-2.amazonaws.com/1687704757814_QNN24.png)',
+              minHeight: '20rem',
+            }"
+            class="flex w-full h-full back-img wrapper"
+          >
+            <div class="content">
+              <h2>뉴스</h2>
+              <p></p>
+            </div>
+          </div>
+        </NuxtLink>
+      </FadeIn>
+      <!-- <FadeIn :mode="'right'">
+        <NuxtLink to="/project/qnn24">
           <div class="logo-wrapper">
-            <img src="~/assets/images/QNN24.png" alt="image" />
+            <img src="https://qnn24.s3.ap-northeast-2.amazonaws.com/1687704757814_QNN24.png" alt="image" />
           </div>
         </NuxtLink>
       </FadeIn>
@@ -26,41 +56,51 @@ import { Base } from '../../.nuxt/components';
           그외 경력으로는 C 언어를 이용한 임베디드 소프트웨어 개발 경험이
           있습니다.
         </div>
-      </FadeIn>
+      </FadeIn> -->
     </template>
   </ContentsContainer>
 </template>
 
 <style scoped lang="scss">
-.logo-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .back-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
-  img {
+  .wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
   }
-}
 
-.logo-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  /* Initially transparent */
-  transition: background-color 0.3s ease;
-  /* Transition effect */
-}
+  .content {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
 
-.logo-wrapper:hover::after {
-  background-color: rgba(0, 0, 0, 0.2);
-  /* On hover, change to semi-transparent black */
-}
+  .wrapper:hover .content {
+    color: white;
+    background-color: $primary;
+    opacity: 1;
+  }
 </style>
