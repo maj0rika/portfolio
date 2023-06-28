@@ -4,7 +4,6 @@ export const useLoading = defineStore('Loading', () => {
   })
   const actions = {
     setPageLoader(value: boolean) {
-      console.log('setPageLoader', value)
       state.pageLoader = value
     },
   }

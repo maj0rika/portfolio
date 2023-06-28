@@ -14,9 +14,6 @@
   watch(
     () => pageLoader,
     () => {
-      console.log('pageLoader changed', pageLoader.value)
-      console.log(progressBar.value)
-
       if (pageLoader.value == true) {
         progressBar.value.opacity = '1'
         progressBar.value.transitionDuration = '500ms'
@@ -30,7 +27,6 @@
           progressBar.value.width = '0%'
         }, 1000)
       }
-      console.log(progressBar.value)
     },
     {
       deep: true,

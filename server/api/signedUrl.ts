@@ -5,8 +5,6 @@ export default defineEventHandler(async evnet => {
   const { AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION } =
     useRuntimeConfig()
 
-  console.log('AWS_ACCESS_KEY_ID', AWS_ACCESS_KEY_ID)
-
   const s3 = new S3Client({
     region: AWS_REGION,
     credentials: {
@@ -16,7 +14,7 @@ export default defineEventHandler(async evnet => {
   })
 
   let query = getQuery(evnet)
-  console.log('query', query)
+
   const timestamp = new Date().getTime()
   const key = `${timestamp}_${query.fileName}`
 

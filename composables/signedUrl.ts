@@ -1,6 +1,5 @@
 export default async function imageUpload(file: File) {
   const uploadUrl = ref<any>()
-  console.log('file', file)
 
   const signedUrl = await $fetch('/api/signedUrl', {
     method: 'get',
@@ -9,8 +8,6 @@ export default async function imageUpload(file: File) {
       fileType: file.type,
     },
   })
-
-  console.log('signedUrl', signedUrl)
 
   const response = await fetch(signedUrl, {
     method: 'PUT',
