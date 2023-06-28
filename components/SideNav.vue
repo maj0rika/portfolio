@@ -81,12 +81,11 @@
     :style="{
       opacity: isShow ? 1 : 0,
       pointerEvents: isShow ? 'auto' : 'none',
+      transform: isShow ? 'translateX(0%)' : 'translateX(-100%)',
     }"
   >
     <aside
-      :style="{
-        transform: isShow ? 'translateX(0%)' : 'translateX(-100%)',
-      }"
+      :style="{ transform: isShow ? 'translateX(0%)' : 'translateX(-100%)' }"
     >
       <figure>
         <div class="flip-card">
@@ -125,6 +124,7 @@
       width: 100%;
       height: 100%;
       opacity: 0;
+      transition: all 0.3s ease-in-out;
     }
 
     @include mobile-over {
@@ -134,6 +134,7 @@
       align-self: start;
       opacity: 1 !important;
       pointer-events: auto !important;
+      transform: none !important;
     }
   }
 
