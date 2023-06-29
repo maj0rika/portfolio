@@ -22,7 +22,15 @@
           >
             <div class="content">
               <h2>물류 온라인 전환 솔류션</h2>
-              <p></p>
+              <p>
+                기존 물류 주선사들이 전화를 통해서만 물류 업무를 처리하던 것을
+                온라인으로 전환을 도와주는 솔루션을 제공하는 서비스입니다.
+              </p>
+              <p>
+                어떻게하면 이미 전화로 짧은 은어로 간단하게 주문을 주고받았던
+                기존 물류 업무를 온라인으로 전환할 수 있을까 항상
+                고민하였습니다.
+              </p>
             </div>
           </div>
         </NuxtLink>
@@ -38,8 +46,15 @@
             class="flex w-full h-full back-img wrapper"
           >
             <div class="content">
-              <h2>뉴스</h2>
-              <p></p>
+              <h2>뉴스 및 멀티 플랫폼</h2>
+              <p>
+                대표적으로 여러 뉴스 매체를 한번에 볼 수 있는 서비스를
+                제공하였습니다.
+              </p>
+              <p>
+                그 외에도 웹툰, 쇼핑몰, 전문가 매칭서비스 등 다양한 서비스를
+                개발했습니다.
+              </p>
             </div>
           </div>
         </NuxtLink>
@@ -100,7 +115,7 @@
 
   .wrapper:hover .content {
     color: white;
-    background-color: $primary;
+    background-color: $secondary;
     opacity: 1;
   }
 </style>
