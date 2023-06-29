@@ -9,35 +9,38 @@
     <h4 class="features">
       <slot name="features" />
     </h4>
-    <div class="contemnt-wrapper">
+    <h5 class="contemnt-wrapper">
       <slot name="contents" />
-    </div>
+    </h5>
   </section>
 </template>
 
 <style scoped lang="scss">
   .wrapper {
     display: flex;
+
     flex-flow: column;
     align-items: center;
-    width: 100%;
+    width: fit-content;
     height: 100%;
-    gap: 1rem;
+    gap: 3rem;
 
-    // .name {
-    //   font-size: 3rem;
-    //   font-weight: 700;
-    // }
+    .name {
+    }
 
-    // .introduction {
-    //   font-size: 2rem;
-    //   font-weight: 700;
-    // }
+    .introduction {
+      padding: 0 10rem;
+      display: flex;
 
-    // .features {
-    //   font-size: 2rem;
-    //   font-weight: 700;
-    // }
+      flex-flow: column;
+      width: 100%;
+    }
+
+    .features {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
   }
 
   .contemnt-wrapper {
