@@ -80,7 +80,7 @@
   .back-img {
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
   }
 
   .wrapper {
