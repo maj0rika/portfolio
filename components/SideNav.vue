@@ -5,6 +5,7 @@
   const { width } = useWindowSize()
   const route = useRoute()
   const router = useRouter()
+  const isFlipped = ref(false)
 
   const props = defineProps({
     isShow: {
@@ -83,13 +84,20 @@
       pointerEvents: isShow ? 'auto' : 'none',
       transform: isShow ? 'translateX(0%)' : 'translateX(-100%)',
     }"
+    @mouseover="isFlipped = true"
+    @mouseleave="isFlipped = false"
   >
     <aside
       :style="{ transform: isShow ? 'translateX(0%)' : 'translateX(-100%)' }"
     >
       <figure>
         <div class="flip-card">
-          <div class="flip-card-inner">
+          <div
+            class="flip-card-inner"
+            :style="{
+              transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+            }"
+          >
             <div class="flip-card-front">
               <img src="~/assets/images/logo.png" alt="logo" />
             </div>
