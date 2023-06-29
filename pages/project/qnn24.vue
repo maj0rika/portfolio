@@ -55,11 +55,7 @@
     </template>
     <template v-slot:contents>
       <div class="flex-box" style="gap: 0px">
-        <InputIconText
-          :icon="{
-            name: 'heroicons:check-20-solid',
-          }"
-        >
+        <InputIconText :icon="{ name: 'logos:pinia', color: '#862ddf' }">
           기존 PHP로 작업된 오래된 서비스를 Vue 기반 Nuxt로 전환
         </InputIconText>
         <InputIconText
@@ -123,7 +119,13 @@
                 TOAST UI에 연동하여 텍스트 편집과 이미지 업로드 용이하게 구현
               </p>
               <p>관리자 페이지에도 동일 기술 적용</p>
-              <input type="file" @change="fileHandler" />
+              <input
+                type="file"
+                @change="fileHandler"
+                :style="{
+                  height: '100%',
+                }"
+              />
               <!-- <a v-if="imgurl" :href="imgurl" target="_blank">
                 <InputWaveText :text="'이미지 링크!'" :style="{
                   fontSize: '1.6rem',
