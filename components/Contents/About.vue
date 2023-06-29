@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  // provide('fadeMode', 'up')
+  const isFlipped = ref(false)
 </script>
 
 <template>
@@ -10,8 +10,26 @@
 
     <template v-slot:body>
       <FadeIn :mode="'right'">
-        <div class="me">
-          <img src="~/assets/images/me.jpeg" alt="logo" />
+        <div
+          class="me"
+          @mouseover="isFlipped = true"
+          @mouseleave="isFlipped = false"
+        >
+          <div class="flip-card" style="height: 200px; width: auto">
+            <div
+              class="flip-card-inner"
+              :style="{
+                transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+              }"
+            >
+              <div class="flip-card-front">
+                <img src="~/assets/images/me.jpeg" alt="logo" />
+              </div>
+              <div class="flip-card-back">
+                <img src="~/assets/images/logo.png" alt="logo" />
+              </div>
+            </div>
+          </div>
 
           <div class="me-content">
             <div class="flex">
@@ -20,7 +38,11 @@
             </div>
             <div class="flex">
               <p class="contents">Front-End Developer</p>
-              <InputWaveText class="substance" style="font-size: 1.6rem" text="maj0rika" />
+              <InputWaveText
+                class="substance"
+                style="font-size: 1.6rem"
+                text="maj0rika"
+              />
             </div>
             <div class="flex">
               <p class="contents">총 경력</p>
@@ -49,113 +71,132 @@
             더 나은 서비스를 만들어 나갑니다.
           </p>
         </FadeIn>
-        <div style="display:flex; gap:1rem;flex-wrap: wrap;">
-
-
-          <ContentsSkillCard color="red" icon="heroicons:user-group" wording="Communication" content="
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <ContentsSkillCard
+            color="red"
+            icon="heroicons:user-group"
+            wording="Communication"
+            content="
           소통을 좋아합니다.
-          " />
-          <ContentsSkillCard color="green" icon="heroicons:device-phone-mobile" wording="UI/UX" content="
+          "
+          />
+          <ContentsSkillCard
+            color="green"
+            icon="heroicons:device-phone-mobile"
+            wording="UI/UX"
+            content="
           유저의 편의성을 추구합니다.
-          " />
+          "
+          />
 
-          <ContentsSkillCard color=" blue" icon="heroicons:cube" wording="Components" content="
-          재사용성을 추구합니다" />
-          <ContentsSkillCard color="#FFD700" icon="heroicons:code-bracket" wording="Code" content="
-            코딩을 즐깁니다." />
+          <ContentsSkillCard
+            color=" blue"
+            icon="heroicons:cube"
+            wording="Components"
+            content="
+          재사용성을 추구합니다"
+          />
+          <ContentsSkillCard
+            color="#FFD700"
+            icon="heroicons:code-bracket"
+            wording="Code"
+            content="
+            코딩을 즐깁니다."
+          />
         </div>
-
       </article>
     </template>
   </ContentsContainer>
 </template>
 
 <style scoped lang="scss">
-@import "assets/styles/index.scss";
+  @import 'assets/styles/index.scss';
 
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-
-  .contents {
+  .flex {
     display: flex;
-    flex: 1 1 1rem
-  }
+    flex-wrap: wrap;
 
-  .substance {
-    display: flex;
-
-    @include mobile {
-      justify-content: flex-end;
-
+    .contents {
+      display: flex;
+      flex: 1 1 1rem;
     }
 
-    justify-content: flex-start;
+    .substance {
+      display: flex;
 
-    flex: 1 1 1rem;
-    word-break: keep-all;
-  }
-}
+      @include mobile {
+        justify-content: flex-end;
+      }
 
-.me {
-  @include mobile {
-    grid-column-gap: 0;
-    grid-template-columns: repeat(1, 1fr);
-  }
+      justify-content: flex-start;
 
-  display: grid;
-
-  grid-gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
-
-  img {
-    width: 100%;
-    height: auto;
+      flex: 1 1 1rem;
+      word-break: keep-all;
+    }
   }
 
-  .me-content {
+  .me {
+    @include mobile {
+      grid-column-gap: 0;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    display: grid;
+
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .me-content {
+      display: flex;
+      flex-flow: column;
+
+      grid-column: span 2 / span 2;
+
+      div {
+        display: flex;
+        align-items: center;
+      }
+
+      p {
+        // width: 20rem;
+        display: flex;
+        padding-right: 1rem;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      span {
+        display: flex;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  article {
     display: flex;
     flex-flow: column;
 
-    grid-column: span 2 / span 2;
+    gap: 3rem;
 
-    div {
-      display: flex;
-      align-items: center;
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
     }
 
     p {
-      // width: 20rem;
-      display: flex;
-      padding-right: 1rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-
-    span {
-      display: flex;
-      font-size: 1.6rem;
+      margin-top: 1rem;
+      font-size: 1.5rem;
     }
   }
-}
 
-
-
-article {
-  display: flex;
-  flex-flow: column;
-
-  gap: 3rem;
-
-  h2 {
-    font-size: 2rem;
-    font-weight: 700;
+  .flip-card {
+    @include mobile {
+      display: none;
+    }
   }
-
-  p {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-  }
-}
 </style>
