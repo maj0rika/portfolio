@@ -14,39 +14,83 @@
   <ProjectContainer>
     <template v-slot:name>QNN24</template>
     <template v-slot:introduction>
-      기간 : 22.02. - 22.10.
-      <br />
-      내용 : 뉴스 플랫폼 서비스 PHP에서 Nuxt 마이그레이션 작업 및 리뉴얼 작업
-      <br />
-      참여비율 : 서비스페이지 프론트엔드 100%
-      <br />
+      <InputIconText
+        :icon="{ name: 'heroicons:calendar-days', color: '#862ddf' }"
+      >
+        22.02. - 22.10.
+      </InputIconText>
+      <InputIconText
+        :icon="{
+          name: 'heroicons:chat-bubble-bottom-center-text',
+          color: '#862ddf',
+        }"
+      >
+        언어 전환 및 기능 추가, 유지보수
+      </InputIconText>
+      <InputIconText
+        :icon="{
+          name: 'heroicons:chart-pie',
+          color: '#862ddf',
+        }"
+      >
+        서비스페이지 프론트엔드 100%
+      </InputIconText>
     </template>
     <template v-slot:features>
-      <Icon name="logos:vue" class="icon" />
-      vue3
-      <Icon name="logos:nuxt-icon" class="icon" />
-      nuxt3
-      <Icon name="logos:daisyui" class="icon" />
-      daisyUI
-      <Icon name="devicon:tailwindcss" class="icon" />
-      tailwindCss
-      <Icon name="logos:pinia" class="icon" />
-      pinia
+      <InputIconText :icon="{ name: 'logos:vue', color: '#862ddf' }">
+        Vue3
+      </InputIconText>
+      <InputIconText :icon="{ name: 'logos:nuxt-icon', color: '#862ddf' }">
+        Nuxt3
+      </InputIconText>
+      <InputIconText :icon="{ name: 'logos:daisyui', color: '#862ddf' }">
+        daisyUI
+      </InputIconText>
+      <InputIconText :icon="{ name: 'devicon:tailwindcss', color: '#862ddf' }">
+        TailwindCss
+      </InputIconText>
+      <InputIconText :icon="{ name: 'logos:pinia', color: '#862ddf' }">
+        Pinia
+      </InputIconText>
     </template>
     <template v-slot:contents>
-      <div class="flex-box" style="gap: 0px; margin-top: 4rem">
-        <p>- 기존 PHP로 작업된 오래된 서비스를 Vue 기반 Nuxt로 전환</p>
-        <p>
-          - 재사용 가능한 컴포넌트 설계, Composition API를 통한 가독성 높은 코드
-          구현, Pinia를 통한 상태관리
-        </p>
-        <p>- PG연동, 본인인증, Google Adsense, AWS 경험</p>
-        <p>
-          - 클라이언트 니즈로부터 AWS S3 이미지 업로드 방식 lambda를 통한
-          방식에서 Signed Url 방식으로 개선
-          <br />
-          &nbsp; 이미지 용량 제한 3Mb 에서 제한없음으로 개선
-        </p>
+      <div class="flex-box" style="gap: 0px">
+        <InputIconText
+          :icon="{
+            name: 'heroicons:check-20-solid',
+          }"
+        >
+          기존 PHP로 작업된 오래된 서비스를 Vue 기반 Nuxt로 전환
+        </InputIconText>
+        <InputIconText
+          :icon="{
+            name: 'heroicons:check-20-solid',
+          }"
+        >
+          <p>
+            재사용 가능한 컴포넌트 설계, Composition API를 통한 가독성 높은 코드
+            구현, Pinia를 통한 상태관리
+          </p>
+        </InputIconText>
+        <InputIconText
+          :icon="{
+            name: 'heroicons:check-20-solid',
+          }"
+        >
+          <p>PG연동, 본인인증, Google Adsense, AWS 경험</p>
+        </InputIconText>
+        <InputIconText
+          :icon="{
+            name: 'heroicons:check-20-solid',
+          }"
+        >
+          <p>
+            AWS S3 이미지 업로드 방식 lambda를 통한 방식에서 Signed Url 방식으로
+            개선
+            <br />
+            &nbsp; 이미지 용량 제한 3Mb 에서 제한없음으로 개선
+          </p>
+        </InputIconText>
       </div>
       <div class="flex-box center">
         <ProjectCard
@@ -168,9 +212,9 @@
           </template>
         </ProjectCard>
 
-        <div class="flex-box">
+        <!-- <div class="flex-box">
           <p style="font-size: 3.2rem">배운점</p>
-        </div>
+        </div> -->
       </div>
     </template>
   </ProjectContainer>
@@ -217,13 +261,18 @@
     pointer-events: none;
   }
 
-  .clickable {
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+  // .clickable {
+  //   transition: all 0.3s ease-in-out;
+  //   cursor: pointer;
 
-    &:hover {
-      color: $primary;
-      font-weight: bold;
-    }
+  //   &:hover {
+  //     color: $primary;
+  //     font-weight: bold;
+  //   }
+  // }
+
+  p {
+    word-break: normal;
+    overflow-wrap: normal;
   }
 </style>
