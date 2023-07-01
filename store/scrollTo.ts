@@ -5,6 +5,7 @@ export const useScrollTo = defineStore('scrollTo', () => {
   const actions = {
     scrollToSection(refName: any) {
       const ref = state.ref[refName]
+
       if (ref) {
         ref.scrollIntoView({ behavior: 'smooth' })
       }

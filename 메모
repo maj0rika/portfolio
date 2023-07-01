@@ -1,0 +1,3 @@
+스티키 적용하려면 부모에 높이 필요.
+
+body scroll 막으려면      target.value = document.querySelector('body')
