@@ -2,11 +2,11 @@
 
 <template>
   <ContentsContainer>
-    <template v-slot:title>경력</template>
+    <template v-slot:title>Career</template>
     <template v-slot:subTitle>나는 이런곳에서 일했어요</template>
 
     <template v-slot:body>
-      <FadeIn :mode="'right'">
+      <FadeIn :mode="'left'">
         <article class="career-box">
           <div class="img-box">
             <img src="@/assets/images/coderecipe-logo.png" alt="" />
@@ -46,7 +46,7 @@
   .other-career {
     color: #888888;
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
     @include mobile {
       margin-top: 10rem;

@@ -6,8 +6,8 @@
 
 <template>
   <ContentsContainer>
-    <template v-slot:title>프로젝트 경험</template>
-    <template v-slot:subTitle>나는 이런 프로젝트를 해왔어요</template>
+    <template v-slot:title>Projects</template>
+    <template v-slot:subTitle>프로젝트를 클릭해주세요</template>
 
     <template v-slot:body>
       <FadeIn :mode="'right'">
@@ -18,9 +18,9 @@
                 'url(https://qnn24.s3.ap-northeast-2.amazonaws.com/1687704726117_logipasta.png)',
               minHeight: '20rem',
             }"
-            class="flex w-full h-full back-img wrapper"
+            class="flex w-full h-full back-img"
           >
-            <div class="content">
+            <!-- <div class="content">
               <h2>물류 온라인 전환 솔류션</h2>
               <p>
                 기존 물류 주선사들이 전화를 통해서만 물류 업무를 처리하던 것을
@@ -31,7 +31,7 @@
                 기존 물류 업무를 온라인으로 전환할 수 있을까 항상
                 고민하였습니다.
               </p>
-            </div>
+            </div> -->
           </div>
         </NuxtLink>
       </FadeIn>
@@ -43,9 +43,9 @@
                 'url(https://qnn24.s3.ap-northeast-2.amazonaws.com/1687704757814_QNN24.png)',
               minHeight: '20rem',
             }"
-            class="flex w-full h-full back-img wrapper"
+            class="flex w-full h-full back-img"
           >
-            <div class="content">
+            <!-- <div class="content">
               <h2>뉴스 및 멀티 플랫폼</h2>
               <p>
                 대표적으로 여러 뉴스 매체를 한번에 볼 수 있는 서비스를
@@ -55,7 +55,7 @@
                 그 외에도 웹툰, 쇼핑몰, 전문가 매칭서비스 등 다양한 서비스를
                 개발했습니다.
               </p>
-            </div>
+            </div> -->
           </div>
         </NuxtLink>
       </FadeIn>
