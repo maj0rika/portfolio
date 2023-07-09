@@ -29,7 +29,7 @@
 
     // 'experience',
     // 'education',
-    'contact',
+    // 'contact',
   ]
 
   const clickMenu = (name: string) => {
