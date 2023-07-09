@@ -33,7 +33,7 @@
           color: '#862ddf',
         }"
       >
-        서비스페이지 프론트엔드 100%
+        서비스페이지 프론트엔드 참여율 100%
       </InputIconText>
     </template>
     <template v-slot:features>

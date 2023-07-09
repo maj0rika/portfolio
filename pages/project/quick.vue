@@ -25,7 +25,7 @@
           color: '#862ddf',
         }"
       >
-        서비스 프론트엔드 30%
+        서비스 프론트엔드 참여율 30%
       </InputIconText>
       <InputIconText
         :icon="{
@@ -33,7 +33,7 @@
           color: '#862ddf',
         }"
       >
-        어드민 프론트엔드 30%
+        어드민 프론트엔드 참여율 30%
       </InputIconText>
     </template>
     <template v-slot:features>
