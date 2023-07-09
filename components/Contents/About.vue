@@ -9,50 +9,56 @@
     <template v-slot:subTitle>나는 이런 사람이에요</template>
 
     <template v-slot:body>
-      <FadeIn :mode="'right'">
-        <div
-          class="me"
-          @mouseover="isFlipped = true"
-          @mouseleave="isFlipped = false"
-        >
-          <div class="flip-card" style="height: 200px; width: auto">
-            <div
-              class="flip-card-inner"
-              :style="{
-                transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
-              }"
-            >
-              <div class="flip-card-front">
-                <img src="~/assets/images/me.jpeg" alt="logo" />
-              </div>
-              <div class="flip-card-back">
-                <img src="~/assets/images/logo.png" alt="logo" />
-              </div>
+      <!-- <FadeIn :mode="'right'"> -->
+      <div
+        class="me"
+        @mouseover="isFlipped = true"
+        @mouseleave="isFlipped = false"
+      >
+        <div class="flip-card" style="height: 200px; width: auto">
+          <div
+            class="flip-card-inner"
+            :style="{
+              transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+            }"
+          >
+            <div class="flip-card-front">
+              <img src="~/assets/images/me.jpeg" alt="logo" />
+            </div>
+            <div class="flip-card-back">
+              <img src="~/assets/images/logo.png" alt="logo" />
             </div>
           </div>
+        </div>
 
-          <div class="me-content">
-            <div class="flex">
-              <p class="contents">이름</p>
-              <span class="substance">이태희</span>
-            </div>
-            <div class="flex">
-              <p class="contents">Front-End Developer</p>
+        <div class="me-content">
+          <div class="flex">
+            <p class="contents">이름</p>
+            <span class="substance">이태희</span>
+          </div>
+          <div class="flex">
+            <p class="contents">닉네임</p>
+            <span class="substance">
               <InputWaveText
                 class="substance"
                 style="font-size: 1.6rem"
                 text="maj0rika"
               />
-            </div>
-            <div class="flex">
-              <p class="contents">총 경력</p>
-              <span class="substance">1년2개월</span>
-            </div>
+            </span>
+          </div>
+          <div class="flex">
+            <p class="contents">직무</p>
+            <span class="substance">Frontend Developer</span>
+          </div>
+          <div class="flex">
+            <p class="contents">총 경력</p>
+            <span class="substance">1년2개월</span>
           </div>
         </div>
-      </FadeIn>
+      </div>
+      <!-- </FadeIn> -->
       <article>
-        <FadeIn :mode="'left'">
+        <FadeIn :mode="'right'">
           <h2>UI/UX를 항상 생각합니다.</h2>
           <p>
             아무리 기능이 좋아도 사용자가 사용하기 어렵다면 그 가치를 떨어뜨릴
