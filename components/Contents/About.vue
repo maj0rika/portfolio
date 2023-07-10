@@ -50,10 +50,6 @@
             <p class="contents">직무</p>
             <span class="substance">Frontend Developer</span>
           </div>
-          <div class="flex">
-            <p class="contents">총 경력</p>
-            <span class="substance">1년2개월</span>
-          </div>
         </div>
       </div>
       <!-- </FadeIn> -->
