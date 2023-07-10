@@ -124,9 +124,9 @@
       <NuxtLayout>
         <NuxtPage :page-key="route.fullPath" />
       </NuxtLayout>
+      <Modal />
+      <MouseEffect />
     </Body>
-    <Modal />
-    <MouseEffect />
   </Html>
 </template>
 
