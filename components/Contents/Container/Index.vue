@@ -25,7 +25,7 @@
 
   .container {
     //TODO: 테스트 지우기
-    // min-height: 100vh; //test
+
     display: flex;
     flex-direction: column;
     align-items: center;
