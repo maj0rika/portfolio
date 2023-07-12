@@ -114,7 +114,7 @@
         name="naver-site-verification"
         content="e5d652aeb0b036ede997f6b978fe609fe83cab75"
       />
-      <meta
+      <Meta
         name="google-site-verification"
         content="_zH4dQEcL8t8jYqL1ghijE9DWTjv-TWdvkXBupO2KhY"
       />
