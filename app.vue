@@ -114,6 +114,10 @@
         name="naver-site-verification"
         content="e5d652aeb0b036ede997f6b978fe609fe83cab75"
       />
+      <meta
+        name="google-site-verification"
+        content="_zH4dQEcL8t8jYqL1ghijE9DWTjv-TWdvkXBupO2KhY"
+      />
 
       <template v-for="meta in head.meta" :key="meta.name || meta.property">
         <Meta v-if="meta.name" :name="meta.name" :content="meta.content" />
