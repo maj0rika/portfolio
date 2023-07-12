@@ -110,6 +110,11 @@
         name="viewport"
         content="width=device-width, initial-scale=1, viewport-fit=cover"
       />
+      <Meta
+        name="naver-site-verification"
+        content="e5d652aeb0b036ede997f6b978fe609fe83cab75"
+      />
+
       <template v-for="meta in head.meta" :key="meta.name || meta.property">
         <Meta v-if="meta.name" :name="meta.name" :content="meta.content" />
         <Meta
