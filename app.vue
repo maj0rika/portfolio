@@ -126,7 +126,7 @@
     </Head>
 
     <Body>
-      <NuxtLayout>
+      <NuxtLayout repo="nuxt/content">
         <NuxtPage :page-key="route.fullPath" />
       </NuxtLayout>
       <Modal />
